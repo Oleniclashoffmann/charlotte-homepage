@@ -10,8 +10,8 @@ const path = Astro.url.pathname;
 const pageTitle = title ? `${title} - ${profile.name}` : `${profile.name} - Home`;
 // left navigation: one page per area of the CV
 const NAV = [
-  ['/', 'Home'], ['/research/', 'Research'], ['/awards/', 'Awards'], ['/teaching/', 'Teaching & Supervision'],
-  ['/lab-work/', 'Lab Work'], ['/volunteering/', 'Volunteering'],
+  ['/', 'Home'], ['/research/', 'Research'], ['/lab-work/', 'Lab Work'], ['/teaching/', 'Teaching & Supervision'],
+  ['/awards/', 'Awards'], ['/volunteering/', 'Volunteering'],
 ];
 const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
 ---
