@@ -5,9 +5,21 @@ import { profile, educationTimeline } from '../data/profile';
 const initials = profile.name.split(' ').map((w) => w[0]).join('');
 // "M.A., Educational Psychology (Human Development), <a>McGill University</a>, Montréal." -> degree / school
 const strip = (h: string) => h.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\.$/, '');
-const degrees = educationTimeline.map((e) => {
+const LOGOS: [string, string][] = [
+  ['McGill', '/img/logos/mcgill.svg'],
+  ['Ludwig-Maximilians', '/img/logos/lmu.svg'],
+  ['Maastricht', '/img/logos/maastricht.svg'],
+];
+const logoFor = (school: string) => LOGOS.find(([k]) => school.includes(k))?.[1];
+const degrees = educationTimeline.flatMap((e) => {
   const [deg, field, ...rest] = strip(e.html).split(', ');
-  return { title: `${deg}, ${field}`, school: rest.join(', '), period: e.period };
+  const school = rest.join(', ');
+  // Sub-entries such as the Maastricht exchange: "Exchange minor in …, <a>Maastricht University</a>."
+  const subs = (e.children ?? []).filter((c) => typeof c !== 'string').map((c) => {
+    const [title, ...where] = strip(c.html).split(', ');
+    return { title, school: where.join(', '), period: c.period, logo: logoFor(where.join(', ')) };
+  });
+  return [{ title: `${deg}, ${field}`, school, period: e.period, logo: logoFor(school) }, ...subs];
 });
 ---
 <Base>
@@ -25,12 +37,17 @@ const degrees = educationTimeline.map((e) => {
 
     <hr />
     <h2>Education</h2>
+    <div class="home-degrees">
     {degrees.map((d) => (
       <div class="home-degree">
-        <p class="deg">{d.title}</p>
-        <p class="school">{d.school} — <em>{d.period}</em></p>
+        {d.logo && <img class="logo" src={d.logo} alt="" width="24" height="24" loading="lazy" />}
+        <div class="text">
+          <p class="deg-line"><span class="deg">{d.title}</span><em class="period">{d.period}</em></p>
+          <p class="school">{d.school}</p>
+        </div>
       </div>
     ))}
+    </div>
 
     <hr />
     <h2>Research Interests</h2>

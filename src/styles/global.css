@@ -135,7 +135,13 @@ h2 + h3.sub { margin-top: 0; }
 .home hr { border: 0; border-top: 1px solid var(--line-soft); margin: 2.4rem 0 2rem; }
 .home h2 { margin-bottom: 1rem; }
 .home .home-about { max-width: 38rem; margin: 0 auto; }
-.home-degree { margin-bottom: 1rem; }
+.home-degrees { display: flex; flex-direction: column; gap: 1.1rem; text-align: left; max-width: 38rem; margin: 0 auto; }
+.home-degree .text { flex: 1; min-width: 0; }
+.home-degree .deg-line { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.home-degree .period { color: var(--muted); white-space: nowrap; }
+.home-degree { display: flex; align-items: flex-start; gap: 1.7rem; }
+.home-degree .logo { width: 24px; height: 24px; object-fit: contain; flex: none; margin-left: -1rem; }
+@media (max-width: 640px) { .home-degree { gap: 1rem; } .home-degree .logo { margin-left: 0; } }
 .home-degree p { margin: 0; }
 .home-degree .deg { font-weight: 500; }
 .home-degree .school { color: var(--muted); }
