@@ -46,7 +46,7 @@ export type TimelineEntry = {
 export const educationTimeline: TimelineEntry[] = [
   {
     period: '2025 – 2027',
-    html: 'M.A., Educational Psychology (Human Development), <a href="https://www.mcgill.ca">McGill University</a>, Montréal.',
+    html: 'M.A., Educational Psychology (Human Development), <a href="https://www.mcgill.ca">McGill University</a> (Canada).',
     bullets: [
       'GPA 4.0/4.0 · Supervisors: Prof. Jacob A. Burack and Prof. Tasmia Hai',
       'Thesis: Social determinants of health and academic functioning in youth.',
@@ -54,14 +54,14 @@ export const educationTimeline: TimelineEntry[] = [
   },
   {
     period: '2021 – 2025',
-    html: 'B.A., Sociology and Psychology, <a href="https://www.lmu.de/en/">Ludwig-Maximilians-Universität München</a>.',
+    html: 'B.A., Sociology and Psychology, <a href="https://www.lmu.de/en/">Ludwig-Maximilians-Universität</a> (Germany).',
     bullets: [
       'Sociology (120 ECTS) and Psychology (60 ECTS); final German grade 1.5',
       'Thesis: Between Secularization and Spirituality: The Transformation of Faith Through Digitalization',
     ],
     children: [
       { period: '2023 – 2024',
-        html: 'Exchange minor in Diversity and Gender Studies, <a href="https://www.maastrichtuniversity.nl">Maastricht University</a>.' },
+        html: 'Exchange minor in Diversity and Gender Studies, <a href="https://www.maastrichtuniversity.nl">Maastricht University</a> (Netherlands).' },
     ],
   },
 ];
