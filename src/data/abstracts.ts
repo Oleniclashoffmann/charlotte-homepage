@@ -53,7 +53,7 @@ export const abstracts: Abstract[] = [
   },
   {
     slug: 'risk-to-assets-indigenous-social-determinants',
-    cites: 'Indigenous social determinants of health: A culturally grounded approach',
+    cites: 'From Risk to Assets: A Strength-Based Developmental Approach',
     title: 'From Risk to Assets: A Strength-Based Developmental Approach to Indigenous Social Determinants of Health among Indigenous Youth',
     authors: [
       { name: 'Charlotte Luisa Sumpf', aff: [1] }, { name: 'Victoria Stillitano', aff: [1] }, { name: 'Deenah Wright', aff: [1] },
@@ -69,7 +69,7 @@ export const abstracts: Abstract[] = [
   },
   {
     slug: 'cultural-identity-resilience-indigenous-adolescents',
-    cites: 'Developmental trajectories of cultural connectedness and resilience',
+    cites: 'Cultural Identity and Resilience Among Indigenous Adolescents',
     title: 'Cultural Identity and Resilience Among Indigenous Adolescents',
     authors: [
       { name: 'Sumpf, C.', aff: [1] }, { name: 'Stillitano, V.', aff: [1] }, { name: 'Lai, J.', aff: [1] },

@@ -134,8 +134,8 @@ export const publications = [
 ];
 
 export const inPreparation = [
-  'Sumpf, C. L., Stillitano, V., Wright, D., Hortuglu, T., Hai, T., & Burack, J. A. Indigenous social determinants of health: A culturally grounded approach in the Naskapi Nation.',
-  'Sumpf, C. L., Stillitano, V., Lai, J., Boatswain-Jacques, A., O’Connor, R. M., Mushquash, C. J., Wendt, D. C., & Burack, J. A. Developmental trajectories of cultural connectedness and resilience among Indigenous youth.',
+  'Sumpf, C. L., Stillitano, V., Wright, D., Hortuglu, T., Hai, T., & Burack, J. A. From Risk to Assets: A Strength-Based Developmental Approach to Indigenous Social Determinants of Health among Indigenous Youth.',
+  'Sumpf, C. L., Stillitano, V., Lai, J., Boatswain-Jacques, A., O’Connor, R. M., Mushquash, C. J., Wendt, D. C., & Burack, J. A. Cultural Identity and Resilience Among Indigenous Adolescents.',
   'Sumpf, C. L., Cluett, R., & Hai, T. Understanding attention-deficit/hyperactivity disorder (ADHD) symptoms and neurobiology in youth through a social determinants of health framework.',
   'Bellon, O., Lai, J., Sumpf, C. L., Clément, E., Wendt, D. C., & Burack, J. A. Land-based programs and well-being in Indigenous youth from Canada: A scoping review.',
   'Rey, G., Sumpf, C. L., Escobar, K., Cohn, T., Hoste, A., & Burack, J. A. Autism in Indigenous communities in Canada: Community perspectives and priorities.',
