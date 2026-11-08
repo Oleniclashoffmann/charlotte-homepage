@@ -1,0 +1,32 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { abstracts, type Abstract } from '../../../data/abstracts';
+
+export function getStaticPaths() {
+  return abstracts.map((a) => ({ params: { slug: a.slug }, props: { a } }));
+}
+const { a } = Astro.props as { a: Abstract };
+// Only number affiliations when there is more than one.
+const numbered = a.affiliations.length > 1;
+const isCharlotte = (name: string) => /Sumpf/.test(name);
+---
+<Base title={a.title} description={a.abstract[0].text.slice(0, 160)}>
+  <article class="abstract-page">
+    <a class="back-link" href="/research/">← Research</a>
+    <h1 class="abstract-title">{a.title}</h1>
+    <p class="abstract-authors">
+      {a.authors.map((au, i) => (
+        <>
+          {isCharlotte(au.name) ? <strong>{au.name}</strong> : au.name}
+          {numbered && <sup>{au.aff.join(',')}</sup>}
+          {i < a.authors.length - 1 && ', '}
+        </>
+      ))}
+    </p>
+    <ol class="abstract-affiliations" class:list={{ plain: !numbered }}>
+      {a.affiliations.map((af) => <li>{af}</li>)}
+    </ol>
+    <h2 class="abstract-heading">Abstract</h2>
+    {a.abstract.map((p) => <p class="abstract-text">{p.label && <strong>{p.label} </strong>}{p.text}</p>)}
+  </article>
+</Base>

@@ -2,9 +2,13 @@
 import Base from '../layouts/Base.astro';
 import Refs from '../components/Refs.astro';
 import { publications, inPreparation, oralPresentations, posterPresentations } from '../data/profile';
+import { abstractFor, abstractUrl } from '../data/abstracts';
 const published = publications.map((p) => ({ text: `${p.authors} ${p.title}. ${p.venue}.`, paper: p.href || undefined }));
 // One "Papers" list: published / in press / submitted first, then manuscripts marked "(in prep.)".
-const papers = [...published, ...inPreparation.map((t) => t.replace(/\.$/, ' (in prep.).'))];
+const papers = [...published, ...inPreparation.map((t) => ({ text: t.replace(/\.$/, ' (in prep.).') }))].map((r) => {
+  const a = abstractFor(r.text);
+  return a ? { ...r, abstract: abstractUrl(a) } : r;
+});
 ---
 <Base title="Research">
   <h1 class="page-title">Research</h1>

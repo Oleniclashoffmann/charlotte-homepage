@@ -178,3 +178,17 @@ section.first { margin-top: 2.2rem; }
   .period-label { order: 0; text-align: left; }
 }
 
+
+/* ---------- abstract pages ---------- */
+.abstract-page { max-width: 42rem; }
+.back-link { display: inline-block; margin-bottom: 1.6rem; font-size: .85rem; color: var(--muted); text-decoration: none; }
+.back-link:hover { color: var(--hover); }
+.abstract-title { font-size: 1.9rem; line-height: 1.25; margin: 0 0 1.2rem; }
+.abstract-authors { margin: 0 0 .8rem; line-height: 1.6; }
+.abstract-authors sup { font-size: .65em; color: var(--muted); margin-left: .05em; }
+.abstract-affiliations { margin: 0; padding-left: 1.2rem; font-size: .85rem; color: var(--muted); line-height: 1.55; }
+.abstract-affiliations li::marker { font-size: .8em; color: var(--faint); }
+.abstract-affiliations.plain { list-style: none; padding-left: 0; }
+.abstract-heading { margin: 2.2rem 0 .8rem; padding-bottom: .4rem; border-bottom: 1px solid var(--line-soft); font-size: 1.15rem; }
+.abstract-text { margin: 0 0 1rem; line-height: 1.7; }
+@media (max-width: 560px) { .abstract-title { font-size: 1.5rem; } }

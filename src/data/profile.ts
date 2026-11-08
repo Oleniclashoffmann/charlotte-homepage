@@ -152,7 +152,7 @@ export const oralPresentations = [
 ];
 
 // Entries with a `poster` get a "Poster" link to the PDF in public/posters.
-export type Ref = string | { text: string; poster?: string; paper?: string };
+export type Ref = string | { text: string; poster?: string; paper?: string; abstract?: string };
 
 export const posterPresentations: Ref[] = [
   'Sumpf, C. L., Stillitano, V., Boatswain-Jacques, A., Lai, J., O’Connor, R. M., Mushquash, C. J., Wendt, D. C., & Burack, J. A. Cultural identity and resilience among Indigenous adolescents. Society for Research in Child Development, Atlanta, USA. [Submitted abstract.]',
