@@ -189,12 +189,7 @@ export const awards: Award[] = [
 ];
 
 export const teaching: Entry[] = [
-  { period: '2026', title: 'Guest Lecturer', by: 'Graduate Human Development Course (EDPE 502), McGill University',
-    bullets: ['Delivered a graduate-level guest lecture on risk and resilience in human development, linking conceptual frameworks to developmental research.'] },
-  { period: '2026', title: 'Expert Training Presentation — Neurodiversity in Schools',
-    by: 'Center for Applied Policy Research (CAP) / Bavarian State Parliament, Germany',
-    bullets: ['Delivered a professional-training presentation translating evidence on neurodiversity into implications for school environments, educators, and students.'] },
-  { period: '2026 – 2027', title: 'Co-supervisor, Undergraduate Research Student', by: 'MYST Lab, McGill University',
+  { period: '2026 – now', title: 'Co-supervisor, Undergraduate Research Student', by: 'MYST Lab, McGill University',
     bullets: [
       'Co-supervise an undergraduate student’s thesis, providing guidance and feedback on project development and research activities.',
       'Thesis: “The Mediating Role of Physical Appearance in the Relationship Between Family Support and Perceived Self-Efficacy in Peer Interactions”.',
@@ -202,6 +197,11 @@ export const teaching: Entry[] = [
   { period: '2024 – now', title: 'Workshop Facilitator — Civic Education',
     by: 'Center for Applied Policy Research (CAP) / Bavarian State Parliament, Germany',
     bullets: ['Facilitate interactive civic-education simulation workshops for high school students, guiding parliamentary decision-making and promoting understanding of democratic institutions, public policy, and state-level legislation.'] },
+  { period: '2026', title: 'Guest Lecturer', by: 'Graduate Human Development Course (EDPE 502), McGill University',
+    bullets: ['Delivered a graduate-level guest lecture on risk and resilience in human development, linking conceptual frameworks to developmental research.'] },
+  { period: '2026', title: 'Expert Training Presentation — Neurodiversity in Schools',
+    by: 'Center for Applied Policy Research (CAP) / Bavarian State Parliament, Germany',
+    bullets: ['Delivered a professional-training presentation translating evidence on neurodiversity into implications for school environments, educators, and students.'] },
 ];
 
 export const outreachTimeline: TimelineEntry[] = [
@@ -223,11 +223,11 @@ export const volunteering: Entry[] = [
   { period: '2026 – now', title: 'Vice-President, Student Life',
     by: 'Education Graduate Students’ Society (EGSS), McGill University',
     bullets: ['Advocate for graduate students on non-academic matters and support students navigating disputes and disciplinary procedures.'] },
+  { period: '2019 – now', title: 'Founding Member, Executive Board & Treasurer', by: 'Grafing Goes Green e.V., Grafing',
+    bullets: ['Financial planning and legal matters for a nonprofit sustainability initiative; social-media outreach.'] },
   { period: '2026', title: 'Community-Engaged Research Workshops — First Nation’s voices in research',
     by: 'Healthy Brains Healthy Lives, Montréal',
     bullets: ['Co-organized multiple knowledge translation workshops with First Nations communities, facilitating dialogue on community perspectives on well-being, priorities for future research, and the inclusion of Indigenous voices in research.'] },
-  { period: '2019 – now', title: 'Founding Member, Executive Board & Treasurer', by: 'Grafing Goes Green e.V., Grafing',
-    bullets: ['Financial planning and legal matters for a nonprofit sustainability initiative; social-media outreach.'] },
   { period: '2025', title: 'Conference Volunteer', by: 'SCERT Conference, Montréal' },
 ];
 
