@@ -1,0 +1,10 @@
+---
+// A list of APA-style citations; Charlotte's name is set in bold.
+interface Props { items: string[]; }
+const { items } = Astro.props;
+const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const bold = (s: string) => esc(s).replace(/Sumpf, C\.( L\.)?/g, (m) => `<strong>${m}</strong>`);
+---
+<ul class="refs">
+  {items.map((r) => <li set:html={bold(r)} />)}
+</ul>
