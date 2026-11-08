@@ -1,9 +1,29 @@
 ---
 import Base from '../layouts/Base.astro';
-import Timeline from '../components/Timeline.astro';
-import { awardsTimeline } from '../data/profile';
+import { awards } from '../data/profile';
+// Group consecutive awards by year, keeping the data's newest-first order.
+const years: { year: string; items: typeof awards }[] = [];
+for (const a of awards) {
+  const last = years.at(-1);
+  if (last?.year === a.year) last.items.push(a); else years.push({ year: a.year, items: [a] });
+}
 ---
 <Base title="Awards">
   <h1 class="page-title">Awards</h1>
-  <section class="first"><Timeline entries={awardsTimeline} /></section>
+  <section class="first awards">
+    {years.map((g) => (
+      <div class="award-year">
+        <h2 class="award-year-label">{g.year}</h2>
+        <ul class="award-list">
+          {g.items.map((a) => (
+            <li class="award">
+              <p class="award-name">{a.name}</p>
+              <p class="award-by">{a.by}</p>
+              {(a.amount || a.note) && <p class="award-note">{[a.note?.replace(/\.$/, ''), a.amount].filter(Boolean).join(' · ')}</p>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
 </Base>

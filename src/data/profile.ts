@@ -177,20 +177,22 @@ export const posterPresentations: Ref[] = [
   { text: 'Sumpf, C. L., Ginsberg, M., Langille, L., Gazith, A., Stubbert, E., Bertone, A., & Burack, J. A. (2025, November 14). Understanding the link between biological motion processing and social responsiveness in autism: A comparison between two measures [Poster]. SCERT Conference, Montréal, Canada.', poster: '/posters/2025-scert-biological-motion-autism.pdf' },
 ];
 
-export const awardsTimeline: TimelineEntry[] = [
-  { period: '2026', html: 'CADDRA Student Award, Canadian ADHD Resource Alliance.',
-    bullets: ['Student conference award at the 2026 CADDRA ADHD Conference.'] },
-  { period: '2026', html: 'Academic Excellence Award, Education Graduate Students’ Society, McGill University.',
-    bullets: ['CA$750 · Merit-based recognition of graduate academic achievement.'] },
-  { period: '2026', html: 'Best Poster Award, Centre for Research in Human Development Conference, Concordia University.' },
-  { period: '2025', html: 'Canada First Research Excellence Fund (CFREF), McGill University.',
-    bullets: ['CA$3,000 in research-related funding.'] },
-  { period: '2025', html: 'Dean’s Loop Lab Award, McGill University.', bullets: ['CA$6,000 graduate award.'] },
-  { period: '2025', html: 'Conference Presentation and Travel Grant, LMU Munich.',
-    bullets: ['€400 to support academic conference presentation and travel.'] },
-  { period: '2023 – 2024', html: 'Erasmus+ Mobility Scholarship, European Commission.',
-    bullets: ['€2,210 in mobility support for the exchange semester at Maastricht University.'] },
-  { period: '2021', html: 'Dr. Hans Riegel Award, Germany.', bullets: ['€200 academic distinction.'] },
+export type Award = { year: string; name: string; by: string; amount?: string; note?: string };
+// Awards page: grouped by year (newest first); `amount` ends the note line.
+export const awards: Award[] = [
+  { year: '2026', name: 'CADDRA Student Award', by: 'Canadian ADHD Resource Alliance',
+    note: 'Student conference award at the 2026 CADDRA ADHD Conference.' },
+  { year: '2026', name: 'Academic Excellence Award', by: 'Education Graduate Students’ Society, McGill University',
+    amount: 'CA$750', note: 'Merit-based recognition of graduate academic achievement.' },
+  { year: '2026', name: 'Best Poster Award', by: 'Centre for Research in Human Development Conference, Concordia University' },
+  { year: '2025', name: 'Canada First Research Excellence Fund (CFREF)', by: 'McGill University',
+    amount: 'CA$3,000', note: 'Research-related funding.' },
+  { year: '2025', name: 'Dean’s Loop Lab Award', by: 'McGill University', amount: 'CA$6,000', note: 'Graduate award.' },
+  { year: '2025', name: 'Conference Presentation and Travel Grant', by: 'LMU Munich',
+    amount: '€400', note: 'Support for academic conference presentation and travel.' },
+  { year: '2023 – 2024', name: 'Erasmus+ Mobility Scholarship', by: 'European Commission',
+    amount: '€2,210', note: 'Mobility support for the exchange semester at Maastricht University.' },
+  { year: '2021', name: 'Dr. Hans Riegel Award', by: 'Germany', amount: '€200', note: 'Academic distinction.' },
 ];
 
 export const teachingTimeline: TimelineEntry[] = [
