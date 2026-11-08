@@ -115,7 +115,7 @@ export const labWork: Entry[] = [
 export const publications = [
   {
     title: 'Investigating interpretation bias and stress responses as risk factors in children of parents with depression',
-    authors: 'Frommelt, T., Bäumler, L., Rohleder, N., Bartosch, A., Schneider, L., Sumpf, C., Sfärlea, A., Schulte-Körne, G., & Platt, B.',
+    authors: 'Frommelt, T., Bäumler, L., Rohleder, N., Bartosch, A., Schneider, L., Sumpf, C. L., Sfärlea, A., Schulte-Körne, G., & Platt, B.',
     venue: 'BMC Psychiatry, 26(1), 576 (2026)',
     href: 'https://doi.org/10.1186/s12888-026-08408-z',
   },
