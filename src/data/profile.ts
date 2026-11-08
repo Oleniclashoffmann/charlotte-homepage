@@ -8,7 +8,7 @@ export const profile = {
     'I am an M.A. student in Educational Psychology (Human Development) at McGill University in Montréal. ' +
     'My research looks at social determinants of health and academic functioning in youth, resilience and ' +
     'cultural connectedness among Indigenous youth, and the neurodevelopment of ADHD and autism.',
-  photo: '', // e.g. '/img/portrait.jpg' once she sends one; until then a monogram circle is shown
+  photo: '/img/charlotte.jpg', // home-page circle; set to '' to show the monogram instead
   role: 'M.A. Student, Educational Psychology (Human Development)',
   institution: 'McGill University, Montréal',
   // DRAFT, derived from the CV - Charlotte should confirm or reword
