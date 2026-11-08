@@ -182,7 +182,7 @@ export type Award = { year: string; name: string; by: string; amount?: string; n
 export const awards: Award[] = [
   { year: '2026', name: 'CADDRA Student Award', by: 'Canadian ADHD Resource Alliance',
     note: 'Student conference award at the 2026 CADDRA ADHD Conference.' },
-  { year: '2026', name: 'Academic Excellence Award', by: 'Education Graduate Students’ Society, McGill University',
+  { year: '2026', name: 'Academic Excellence Award', by: 'McGill University',
     amount: 'CA$750', note: 'Merit-based recognition of graduate academic achievement.' },
   { year: '2026', name: 'Best Poster Award', by: 'Centre for Research in Human Development Conference, Concordia University' },
   { year: '2025', name: 'Canada First Research Excellence Fund (CFREF)', by: 'McGill University',
@@ -192,7 +192,7 @@ export const awards: Award[] = [
     amount: '€400', note: 'Support for academic conference presentation and travel.' },
   { year: '2023 – 2024', name: 'Erasmus+ Mobility Scholarship', by: 'European Commission',
     amount: '€2,210', note: 'Mobility support for the exchange semester at Maastricht University.' },
-  { year: '2021', name: 'Dr. Hans Riegel Award', by: 'Germany', amount: '€200', note: 'Academic distinction.' },
+  { year: '2021', name: 'Dr. Hans Riegel Award', by: 'Dr. Hans Riegel Foundation', amount: '€200', note: 'Academic distinction.' },
 ];
 
 export const teachingTimeline: TimelineEntry[] = [
