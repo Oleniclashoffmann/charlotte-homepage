@@ -1,10 +1,17 @@
 ---
-// A list of APA-style citations; Charlotte's name is set in bold.
-interface Props { items: string[]; }
+// A list of APA-style citations; Charlotte's name is set in bold. Entries may link to their poster PDF.
+import type { Ref } from '../data/profile';
+interface Props { items: Ref[]; }
 const { items } = Astro.props;
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const bold = (s: string) => esc(s).replace(/Sumpf, C\.( L\.)?/g, (m) => `<strong>${m}</strong>`);
+const norm = (r: Ref) => (typeof r === 'string' ? { text: r } : r);
 ---
 <ul class="refs">
-  {items.map((r) => <li set:html={bold(r)} />)}
+  {items.map(norm).map((r) => (
+    <li>
+      <span set:html={bold(r.text)} />
+      {r.poster && <> <a class="ref-link" href={r.poster} target="_blank" rel="noopener noreferrer">Poster&nbsp;↗</a></>}
+    </li>
+  ))}
 </ul>

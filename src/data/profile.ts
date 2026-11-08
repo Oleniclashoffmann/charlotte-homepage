@@ -8,12 +8,25 @@ export const profile = {
     'I am an M.A. student in Educational Psychology (Human Development) at McGill University in Montréal. ' +
     'My research looks at social determinants of health and academic functioning in youth, resilience and ' +
     'cultural connectedness among Indigenous youth, and the neurodevelopment of ADHD and autism.',
-  photo: '', // e.g. '/img/portrait.jpg' once she sends one; empty hides it
-  // Shown as links under the About text and in the footer. Leave a URL empty to hide it.
+  photo: '', // e.g. '/img/portrait.jpg' once she sends one; until then a monogram circle is shown
+  role: 'M.A. Student, Educational Psychology (Human Development)',
+  institution: 'McGill University, Montréal',
+  // DRAFT, derived from the CV - Charlotte should confirm or reword
+  researchInterests: [
+    'Social determinants of health in youth',
+    'Resilience and cultural connectedness among Indigenous youth',
+    'ADHD symptoms and neurodevelopment',
+    'Social attention in autism',
+    'Academic functioning and well-being',
+  ],
+  // Shown as buttons on the start page and as links in the footer. Leave a URL empty to hide it;
+  // 'soon' shows it greyed out without a link (CV is still a work in progress).
   links: {
-    CV: '/cv/',
+    CV: 'soon',
     Email: 'mailto:charlotte@sumpf-online.de',
-    LinkedIn: '',
+    LinkedIn: 'https://www.linkedin.com/in/charlotte-sumpf-bb6a1b264/',
+    ResearchGate: 'https://www.researchgate.net/profile/Charlotte-Sumpf-2',
+    ORCID: 'https://orcid.org/0009-0004-4174-0512',
     'Google Scholar': '',
   } as Record<string, string>,
 };
@@ -146,19 +159,22 @@ export const oralPresentations = [
   'Sumpf, C. L., Schneider, L., Bäumler, L., Rohleder, N., Schulte-Körne, G., Platt, B., & Frommelt, T. (2025, April 9). The association between cognitive biases and stress responses in children and adolescents with a parent suffering from depression [Symposium presentation]. German Psychotherapy Congress, Berlin, Germany.',
 ];
 
-export const posterPresentations = [
+// Entries with a `poster` get a "Poster" link to the PDF in public/posters.
+export type Ref = string | { text: string; poster?: string };
+
+export const posterPresentations: Ref[] = [
   'Sumpf, C. L., Stillitano, V., Boatswain-Jacques, A., Lai, J., O’Connor, R. M., Mushquash, C. J., Wendt, D. C., & Burack, J. A. Cultural identity and resilience among Indigenous adolescents. Society for Research in Child Development, Atlanta, USA. [Submitted abstract.]',
   'Boatswain-Jacques, A., Knecht, L., Cohn, T., Sumpf, C. L., Stillitano, V., Pico, E., Bouma, A., Brodeur, D., Kelley, E., Iarocci, G., Russo, N., & Burack, J. A. Autism and autistic traits are associated with enhanced sensitivity to task-relevant probabilities in a correlated flanker. Society for Research in Child Development, Atlanta, USA. [Submitted abstract.]',
-  'Sumpf, C. L., Cluett, R., & Hai, T. (2026, November 6). Understanding ADHD symptoms and neurobiology in youth through a social determinants of health framework [Poster]. Canadian ADHD Resource Alliance, Ottawa, Canada.',
-  'Sumpf, C. L., Cluett, R., Jolin, A., Burack, J. A., & Hai, T. (2026, October). Age-related variation and sex-based comparisons in insular cortical thickness in youth [Poster]. International Society for Tractography, Banff, Canada.',
+  { text: 'Sumpf, C. L., Cluett, R., & Hai, T. (2026, November 6). Understanding ADHD symptoms and neurobiology in youth through a social determinants of health framework [Poster]. Canadian ADHD Resource Alliance, Ottawa, Canada.', poster: '/posters/2026-caddra-adhd-sdoh.pdf' },
+  { text: 'Sumpf, C. L., Cluett, R., Jolin, A., Burack, J. A., & Hai, T. (2026, October). Age-related variation and sex-based comparisons in insular cortical thickness in youth [Poster]. International Society for Tractography, Banff, Canada.', poster: '/posters/2026-ist-insular-cortical-thickness.pdf' },
   'Cluett, R., Sumpf, C. L., Jolin, A., Burack, J. A., & Hai, T. (2026, October). Age and socioeconomic variation in rostral and caudal anterior cingulate cortex thickness in youth [Poster]. International Society for Tractography, Banff, Canada.',
   'Sumpf, C. L., Ferraro, B., Donciu, L., Friedenberg, V., & Koestner, R. (2026, June 6). Investigating how cultural background and aspirations affect well-being among student sojourners [Poster]. Canadian Psychological Association, Montréal, Canada.',
-  'Sumpf, C. L., Jolin, A., Hai, T., & Burack, J. A. (2026, June 6). Predicting academic functioning in youth using a social determinants of health framework [Poster]. Canadian Psychological Association, Montréal, Canada.',
+  { text: 'Sumpf, C. L., Jolin, A., Hai, T., & Burack, J. A. (2026, June 6). Predicting academic functioning in youth using a social determinants of health framework [Poster]. Canadian Psychological Association, Montréal, Canada.', poster: '/posters/2026-cpa-academic-functioning-sdoh.pdf' },
   'Jolin, A., Cluett, R., Sumpf, C. L., Burack, J. A., & Hai, T. (2026, June 5). Association between parent and child attention skills in a community-based sample [Poster]. Canadian Psychological Association, Montréal, Canada.',
-  'Sumpf, C. L., Stillitano, V., Wright, D., Hortuglu, T., Hai, T., & Burack, J. A. (2026, June 3). From risk to assets: A strengths-based developmental approach to Indigenous social determinants of health among Indigenous youth [Poster]. Canadian Developmental Psychology Conference, Montréal, Canada.',
-  'Sumpf, C. L., Stillitano, V., Lai, J., Boatswain-Jacques, A., O’Connor, R. M., Mushquash, C. J., Wendt, D. C., & Burack, J. A. (2026, May 28). Developmental trajectories of cultural connectedness and resilience among Indigenous youth [Poster]. Jean Piaget Society, Ottawa, Canada.',
-  'Sumpf, C. L., Friedenberg, V., & Talwar, V. (2026, March 13). Racial differences in adolescent cyberbullying victimization: The moderating role of perceived school safety [Poster]. CRDH Conference, Montréal, Canada.',
-  'Sumpf, C. L., Ginsberg, M., Langille, L., Gazith, A., Stubbert, E., Bertone, A., & Burack, J. A. (2025, November 14). Understanding the link between biological motion processing and social responsiveness in autism: A comparison between two measures [Poster]. SCERT Conference, Montréal, Canada.',
+  { text: 'Sumpf, C. L., Stillitano, V., Wright, D., Hortuglu, T., Hai, T., & Burack, J. A. (2026, June 3). From risk to assets: A strengths-based developmental approach to Indigenous social determinants of health among Indigenous youth [Poster]. Canadian Developmental Psychology Conference, Montréal, Canada.', poster: '/posters/2026-cdpc-indigenous-sdoh.pdf' },
+  { text: 'Sumpf, C. L., Stillitano, V., Lai, J., Boatswain-Jacques, A., O’Connor, R. M., Mushquash, C. J., Wendt, D. C., & Burack, J. A. (2026, May 28). Developmental trajectories of cultural connectedness and resilience among Indigenous youth [Poster]. Jean Piaget Society, Ottawa, Canada.', poster: '/posters/2026-jps-cultural-connectedness-resilience.pdf' },
+  { text: 'Sumpf, C. L., Friedenberg, V., & Talwar, V. (2026, March 13). Racial differences in adolescent cyberbullying victimization: The moderating role of perceived school safety [Poster]. CRDH Conference, Montréal, Canada.', poster: '/posters/2026-crdh-cyberbullying-school-safety.pdf' },
+  { text: 'Sumpf, C. L., Ginsberg, M., Langille, L., Gazith, A., Stubbert, E., Bertone, A., & Burack, J. A. (2025, November 14). Understanding the link between biological motion processing and social responsiveness in autism: A comparison between two measures [Poster]. SCERT Conference, Montréal, Canada.', poster: '/posters/2025-scert-biological-motion-autism.pdf' },
 ];
 
 export const awardsTimeline: TimelineEntry[] = [

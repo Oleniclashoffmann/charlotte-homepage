@@ -123,3 +123,63 @@ h2 + h3.sub { margin-top: 0; }
 .prose blockquote { margin: 0 0 1.5rem; padding: .2rem 1rem; border-left: 2px solid var(--line); color: var(--muted); font-style: italic; }
 
 @media print { .back, .site-footer { display: none; } body { background: #fff; } }
+
+/* ---------- start page: centred, like a personal academic landing page ---------- */
+.home { text-align: center; }
+.home-photo { display: block; width: 280px; height: 280px; margin: 0 auto 2.2rem; border-radius: 50%; object-fit: cover; }
+.home-photo.monogram { display: grid; place-items: center; background: #efe9e3; color: var(--text);
+  font-family: var(--serif); font-size: 5rem; letter-spacing: .04em; }
+.home h1 { font-size: 2.1rem; margin-bottom: .6rem; }
+.home .home-role { font-weight: 500; margin: 0 0 .2rem; }
+.home .home-inst { color: var(--muted); margin: 0; }
+.home hr { border: 0; border-top: 1px solid var(--line-soft); margin: 2.4rem 0 2rem; }
+.home h2 { margin-bottom: 1rem; }
+.home .home-about { max-width: 38rem; margin: 0 auto; }
+.home-degree { margin-bottom: 1rem; }
+.home-degree p { margin: 0; }
+.home-degree .deg { font-weight: 500; }
+.home-degree .school { color: var(--muted); }
+.home-interests { display: inline-block; text-align: left; margin: 0; padding-left: 1.2rem; }
+.home-interests li { margin: .2rem 0; }
+.home-interests li::marker { color: var(--faint); }
+.button-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin: 2.6rem 0 0; }
+.button-links .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .55rem 1rem; border-radius: 10px;
+  background: #f1ece6; color: var(--text); text-decoration: none; font-size: .95rem; transition: background-color .15s; }
+.button-links .btn:hover { background: #e7e0d8; }
+.button-links svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 560px) { .home-photo { width: 200px; height: 200px; } .home-photo.monogram { font-size: 3.6rem; } }
+
+/* ---------- navigation bar on top (sticky); page content below ---------- */
+html { scroll-behavior: smooth; }
+.shell { display: block; }
+.site-nav { position: sticky; top: 0; z-index: 20; background: rgba(251, 249, 247, .92);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--line-soft); }
+.site-nav { display: flex; align-items: center; justify-content: flex-start; gap: 2.4rem;
+  max-width: none; padding: .8rem max(24px, calc((100vw - 1040px) / 2)); }
+.site-nav .brand { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; letter-spacing: .04em; text-decoration: none; flex: none; }
+.site-nav nav { min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.6rem; white-space: nowrap; }
+.site-nav a { text-decoration: none; color: var(--muted); font-size: .93rem; position: relative; transition: color .15s; }
+.site-nav a:hover { color: var(--text); }
+.site-nav a[aria-current="page"] { color: var(--text); font-weight: 500; }
+.site-nav ul a[aria-current="page"]::after { content: ''; position: absolute; left: 0; right: 0; bottom: -.4rem; height: 2px;
+  background: var(--text); }
+.page main { padding-top: 64px; }
+.page-title { margin-bottom: .4rem; }
+section.first { margin-top: 2.2rem; }
+@media (max-width: 760px) {
+  .site-nav { padding: .7rem 20px; gap: 1.1rem; }
+  .site-nav ul { gap: 1.1rem; }
+  .page main { padding-top: 40px; }
+}
+
+/* links that are not available yet (e.g. the CV while it is being updated) */
+.button-links .btn.disabled { opacity: .45; cursor: default; }
+.button-links .btn.disabled:hover { background: #f1ece6; }
+.bracket-links .soon { color: var(--faint); cursor: default; }
+
+/* "Poster" link at the end of a citation */
+.refs .ref-link { display: inline-block; text-indent: 0; margin-left: .2rem; padding: 0 .45rem; border-radius: 4px;
+  background: #f1ece6; color: var(--text); font-size: .8rem; font-weight: 500; text-decoration: none; white-space: nowrap;
+  transition: background-color .15s; }
+.refs .ref-link:hover { background: #e7e0d8; }

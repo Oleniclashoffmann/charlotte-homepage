@@ -1,10 +1,11 @@
 ---
+// Plain text links (footer); empty URLs are hidden, 'soon' shows the label greyed out without a link.
 interface Props { links: Record<string, string>; }
 const { links } = Astro.props;
 const external = (u: string) => /^https?:/.test(u);
 ---
 <div class="bracket-links">
-  {Object.entries(links).filter(([, u]) => u).map(([label, u]) => (
-    <a href={u} {...(external(u) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{label}</a>
-  ))}
+  {Object.entries(links).filter(([, u]) => u).map(([label, u]) => u === 'soon'
+    ? <span class="soon" title="Coming soon">{label}</span>
+    : <a href={u} {...(external(u) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{label}</a>)}
 </div>

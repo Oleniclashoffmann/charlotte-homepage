@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import Refs from '../components/Refs.astro';
+import { publications, inPreparation, oralPresentations, posterPresentations } from '../data/profile';
+const published = publications.map((p) => `${p.authors} ${p.title}. ${p.venue}.`);
+---
+<Base title="Research">
+  <h1 class="page-title">Research</h1>
+  <section class="first">
+    <h2>Publications</h2>
+    <h3 class="sub">Peer-reviewed, in press &amp; submitted</h3>
+    <Refs items={published} />
+    <h3 class="sub">Manuscripts in preparation</h3>
+    <Refs items={inPreparation} />
+  </section>
+  <section>
+    <h2>Conference Presentations</h2>
+    <h3 class="sub">Oral presentations</h3>
+    <Refs items={oralPresentations} />
+    <h3 class="sub">Poster presentations</h3>
+    <Refs items={posterPresentations} />
+  </section>
+</Base>

@@ -5,7 +5,15 @@ import BracketLinks from '../components/BracketLinks.astro';
 
 interface Props { title?: string; description?: string; }
 const { title, description = profile.tagline } = Astro.props;
+const initials = profile.name.split(' ').map((w) => w[0]).join('');
+const path = Astro.url.pathname;
 const pageTitle = title ? `${title} - ${profile.name}` : `${profile.name} - Home`;
+// left navigation: one page per area of the CV
+const NAV = [
+  ['/', 'Home'], ['/research/', 'Research'], ['/awards/', 'Awards'], ['/teaching/', 'Teaching & Supervision'],
+  ['/lab-work/', 'Lab Work'], ['/volunteering/', 'Volunteering'],
+];
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
 ---
 <!doctype html>
 <html lang="en">
@@ -22,12 +30,22 @@ const pageTitle = title ? `${title} - ${profile.name}` : `${profile.name} - Home
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Work+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" />
   </head>
   <body>
-    <main><slot /></main>
-    <footer class="site-footer">
-      <div class="inner">
-        <span class="meta">© {new Date().getFullYear()} {profile.name}</span>
-        <BracketLinks links={profile.links} />
+    <div class="shell">
+      <aside class="site-nav">
+        <a class="brand" href="/" aria-label="Home">{initials}</a>
+        <nav aria-label="Main">
+          <ul>{NAV.map(([href, label]) => <li><a href={href} aria-current={isActive(href) ? 'page' : undefined}>{label}</a></li>)}</ul>
+        </nav>
+      </aside>
+      <div class="page">
+        <main><slot /></main>
+        <footer class="site-footer">
+          <div class="inner">
+            <span class="meta">© {new Date().getFullYear()} {profile.name}</span>
+            <BracketLinks links={profile.links} />
+          </div>
+        </footer>
       </div>
-    </footer>
+    </div>
   </body>
 </html>
