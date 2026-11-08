@@ -23,7 +23,7 @@ export const profile = {
   // 'soon' shows it greyed out without a link (CV is still a work in progress).
   links: {
     CV: 'soon',
-    Email: 'mailto:charlotte@sumpf-online.de',
+    Email: 'mailto:charlotte.sumpf@mail.mcgill.ca',
     LinkedIn: 'https://www.linkedin.com/in/charlotte-sumpf-bb6a1b264/',
     ResearchGate: 'https://www.researchgate.net/profile/Charlotte-Sumpf-2',
     ORCID: 'https://orcid.org/0009-0004-4174-0512',
