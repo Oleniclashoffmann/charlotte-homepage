@@ -1,29 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
+import PeriodList from '../components/PeriodList.astro';
 import { awards } from '../data/profile';
-// Group consecutive awards by year, keeping the data's newest-first order.
-const years: { year: string; items: typeof awards }[] = [];
-for (const a of awards) {
-  const last = years.at(-1);
-  if (last?.year === a.year) last.items.push(a); else years.push({ year: a.year, items: [a] });
-}
+// One bullet per award: the note, with the amount at the end.
+const entries = awards.map((a) => {
+  const line = [a.note?.replace(/\.$/, ''), a.amount].filter(Boolean).join(' · ');
+  return { period: a.year, title: a.name, by: a.by, bullets: line ? [line] : [], poster: a.poster };
+});
 ---
 <Base title="Awards">
   <h1 class="page-title">Awards</h1>
-  <section class="first awards">
-    {years.map((g) => (
-      <div class="award-year">
-        <h2 class="award-year-label">{g.year}</h2>
-        <ul class="award-list">
-          {g.items.map((a) => (
-            <li class="award">
-              <p class="award-name">{a.name}{a.poster && <> <a class="ref-link" href={a.poster} target="_blank" rel="noopener noreferrer">Poster&nbsp;↗</a></>}</p>
-              <p class="award-by">{a.by}</p>
-              {(a.amount || a.note) && <p class="award-note">{[a.note?.replace(/\.$/, ''), a.amount].filter(Boolean).join(' · ')}</p>}
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
-  </section>
+  <section class="first"><PeriodList entries={entries} /></section>
 </Base>

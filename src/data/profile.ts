@@ -66,57 +66,49 @@ export const educationTimeline: TimelineEntry[] = [
   },
 ];
 
-export const researchTimeline: TimelineEntry[] = [
-  {
-    period: '2025 – now',
-    html: 'Graduate Student Researcher, McGill Youth Study Team (MYST Lab), McGill University (Prof. Jacob A. Burack).',
+// Lab Work, Teaching & Supervision and Volunteering pages use the same layout as Awards:
+// period on the left, then title, organisation and indented bullet lines.
+export type Entry = { period: string; title: string; by?: string; bullets?: string[]; poster?: string };
+
+export const labWork: Entry[] = [
+  { period: '2025 – now', title: 'Graduate Student Researcher',
+    by: 'McGill Youth Study Team (MYST Lab), McGill University · Prof. Jacob A. Burack',
     bullets: [
       'Contribute to longitudinal, community-engaged research with Indigenous communities.',
       'Collaborate on studies of social attention in autistic youth and developmental experiences of youth in out-of-home care.',
-    ],
-  },
-  {
-    period: '2025 – now',
-    html: 'Graduate Student Researcher, Cognition, Attention &amp; Achievement Research, McGill University (Prof. Tasmia Hai).',
+    ] },
+  { period: '2025 – now', title: 'Graduate Student Researcher',
+    by: 'Cognition, Attention & Achievement Research, McGill University · Prof. Tasmia Hai',
     bullets: [
       'Research on social determinants of health and academic functioning in youth.',
-      'Analyze structural MRI data on cortical thickness and white matter connectivity &amp; tractography methods.',
+      'Analyze structural MRI data on cortical thickness and white matter connectivity & tractography methods.',
       'ABCD Study data examining social determinants, ADHD symptoms, and neurodevelopment.',
-    ],
-  },
-  {
-    period: '2024 – 2025',
-    html: 'Research Assistant, PRODO Research Group, LMU University Hospital, Munich (Dr. Belinda Platt).',
+    ] },
+  { period: '2024 – 2025', title: 'Research Assistant',
+    by: 'PRODO Research Group, LMU University Hospital, Munich · Dr. Belinda Platt',
     bullets: [
       'CHIMPS-NET study: data entry and analysis.',
       'GuG-Auf study: supported program evaluation and co-facilitated family group interventions.',
       'CoCo study: conducted cortisol-based stress testing and managed data entry.',
-    ],
-  },
-  {
-    period: '2024 – 2025',
-    html: 'Research Assistant, Toppspell Research Group, LMU University Hospital, Munich (Prof. Dr. Christina Moll).',
+    ] },
+  { period: '2024 – 2025', title: 'Research Assistant',
+    by: 'Toppspell Research Group, LMU University Hospital, Munich · Prof. Dr. Christina Moll',
     bullets: [
       'Administered standardized cognitive and spelling assessments to elementary school children, examining cognitive processes underlying spelling development.',
       'Conducted EEG recordings, coordinated participant assessments, and supported longitudinal data collection, entry, and quality control.',
-    ],
-  },
-  {
-    period: '2024 – 2025',
-    html: 'Research Assistant, Depression Research Group, LMU University Hospital, Munich (Dr. Dr. Aline D. Scherff).',
+    ] },
+  { period: '2024 – 2025', title: 'Research Assistant',
+    by: 'Depression Research Group, LMU University Hospital, Munich · Dr. Dr. Aline D. Scherff',
     bullets: [
       'BioMD-Y biobank study examining genetic, hormonal, and environmental risk and protective factors associated with depression in youth.',
       'Managed biological samples and documentation; assisted with research grant preparation and submission.',
-    ],
-  },
-  {
-    period: '2022 – 2023',
-    html: 'Research Assistant / Lab Coordinator, Experimental Lab for Economics and Social Sciences (MELESSA), LMU Munich (Dr. Andrej Woerner).',
+    ] },
+  { period: '2022 – 2023', title: 'Research Assistant / Lab Coordinator',
+    by: 'Experimental Lab for Economics and Social Sciences (MELESSA), LMU Munich · Dr. Andrej Woerner',
     bullets: [
       'Organized and conducted large-scale computer-based experiments, including participant recruitment, session coordination, technical setup, and data quality monitoring.',
       'Supported interdisciplinary experimental research, collaborating with multiple research groups.',
-    ],
-  },
+    ] },
 ];
 
 // Citations: her name is set in bold automatically (see src/components/Refs.astro).
@@ -196,10 +188,10 @@ export const awards: Award[] = [
   { year: '2021', name: 'Dr. Hans Riegel Award', by: 'Dr. Hans Riegel Foundation', amount: '€200', note: 'Academic distinction.' },
 ];
 
-export const teachingTimeline: TimelineEntry[] = [
-  { period: '2026', html: 'Guest Lecturer, Graduate Human Development Course (EDPE 502), McGill University.',
+export const teaching: Entry[] = [
+  { period: '2026', title: 'Guest Lecturer', by: 'Graduate Human Development Course (EDPE 502), McGill University',
     bullets: ['Delivered a graduate-level guest lecture on risk and resilience in human development, linking conceptual frameworks to developmental research.'] },
-  { period: '2026 – 2027', html: 'Co-supervisor, Undergraduate Research Student, MYST Lab, McGill University.',
+  { period: '2026 – 2027', title: 'Co-supervisor, Undergraduate Research Student', by: 'MYST Lab, McGill University',
     bullets: [
       'Co-supervise an undergraduate student’s thesis, providing guidance and feedback on project development and research activities.',
       'Thesis: “The Mediating Role of Physical Appearance in the Relationship Between Family Support and Perceived Self-Efficacy in Peer Interactions”.',
@@ -221,12 +213,13 @@ export const reviewingTimeline: TimelineEntry[] = [
   { period: '2026', html: 'Conference Abstract Reviewer, EGSS Conference, McGill University.' },
 ];
 
-export const communityTimeline: TimelineEntry[] = [
-  { period: '2026 – now', html: 'Vice-President, Student Life, Education Graduate Students’ Society (EGSS), McGill University.',
+export const volunteering: Entry[] = [
+  { period: '2026 – now', title: 'Vice-President, Student Life',
+    by: 'Education Graduate Students’ Society (EGSS), McGill University',
     bullets: ['Advocate for graduate students on non-academic matters and support students navigating disputes and disciplinary procedures.'] },
-  { period: '2019 – now', html: 'Founding Member, Executive Board &amp; Treasurer, Grafing Goes Green e.V., Grafing.',
+  { period: '2019 – now', title: 'Founding Member, Executive Board & Treasurer', by: 'Grafing Goes Green e.V., Grafing',
     bullets: ['Financial planning and legal matters for a nonprofit sustainability initiative; social-media outreach.'] },
-  { period: '2025', html: 'Conference Volunteer, SCERT Conference, Montréal.' },
+  { period: '2025', title: 'Conference Volunteer', by: 'SCERT Conference, Montréal' },
 ];
 
 export const skills = [

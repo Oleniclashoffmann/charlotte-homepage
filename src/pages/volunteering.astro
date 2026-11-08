@@ -1,9 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
-import Timeline from '../components/Timeline.astro';
-import { communityTimeline } from '../data/profile';
+import PeriodList from '../components/PeriodList.astro';
+import { volunteering } from '../data/profile';
 ---
 <Base title="Volunteering">
   <h1 class="page-title">Volunteering</h1>
-  <section class="first"><Timeline entries={communityTimeline} /></section>
+  <section class="first"><PeriodList entries={volunteering} /></section>
 </Base>

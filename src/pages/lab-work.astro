@@ -1,9 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
-import Timeline from '../components/Timeline.astro';
-import { researchTimeline } from '../data/profile';
+import PeriodList from '../components/PeriodList.astro';
+import { labWork } from '../data/profile';
 ---
 <Base title="Lab Work">
   <h1 class="page-title">Lab Work</h1>
-  <section class="first"><Timeline entries={researchTimeline} /></section>
+  <section class="first"><PeriodList entries={labWork} /></section>
 </Base>

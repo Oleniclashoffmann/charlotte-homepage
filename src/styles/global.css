@@ -68,35 +68,6 @@ h2 + h3.sub { margin-top: .4rem; }
 .entry:hover h3 { text-decoration-color: var(--hover); }
 .entry .desc { margin: .55rem 0 .2rem; font-size: .93rem; font-style: italic; color: var(--muted); }
 
-/* ---------- timeline (line+dot | text; descriptions on a side line; sub-entries on a branch) ---------- */
-.timeline { --line-x: 4px; list-style: none; margin: 0; padding: 0; }
-.tl-item { position: relative; padding: 0 0 2rem 1.8rem; }
-.tl-item::before { content: ''; position: absolute; left: var(--line-x); top: .6rem; bottom: -.6rem;
-  width: 1px; background: var(--line-soft); }
-.tl-item:last-child::before { display: none; }
-.tl-dot { position: absolute; left: calc(var(--line-x) - 3.5px); top: .5rem; width: 8px; height: 8px;
-  border-radius: 50%; background: var(--line); }
-.tl-text { margin: 0; }
-.tl-head { display: flex; align-items: baseline; gap: 1rem; }
-.tl-child-main { flex: 1; min-width: 0; }
-.tl-head .tl-text { flex: 1; }
-.tl-period { flex: none; font-size: .8rem; font-weight: 300; letter-spacing: .04em; color: var(--muted);
-  white-space: nowrap; font-variant-numeric: tabular-nums; }
-@media (max-width: 560px) { .tl-head { flex-direction: column; gap: 0; } .tl-period { order: -1; } }
-.tl-children { list-style: none; margin: .6rem 0 0; padding: 0 0 0 1.1rem; border-left: 1px solid var(--line-soft); }
-.tl-children li { position: relative; font-size: .93rem; padding: .2rem 0 .2rem .2rem; }
-.tl-children li::before { content: ''; position: absolute; left: -1.1rem; top: 1rem; width: .8rem; height: 1px;
-  background: var(--line-soft); }
-.tl-bullets { list-style: none; margin: .4rem 0 0 .1rem; padding: .05rem 0 .05rem .8rem;
-  border-left: 1px solid var(--line); font-size: .9rem; color: var(--muted); }
-.tl-bullets li { padding: .05rem 0; }
-.tl-bullets li::before { display: none; }
-@media (max-width: 560px) {
-  .tl-item { padding-left: 1.4rem; }
-  .tl-children { padding-left: .9rem; }
-  .tl-children li::before { left: -.9rem; width: .6rem; }
-}
-
 /* ---------- footer ---------- */
 .site-footer { max-width: 768px; margin: 5rem auto 0; padding: 2rem 24px 4rem; }
 .site-footer .inner { border-top: 1px solid var(--line-soft); padding-top: 2rem;
@@ -190,17 +161,19 @@ section.first { margin-top: 2.2rem; }
   transition: background-color .15s; }
 .ref-link:hover { background: #e7e0d8; }
 
-/* ---------- awards: year column | awards ---------- */
-.award-year { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1.5rem; padding: 1.6rem 0;
+/* ---------- period list (awards, lab work, teaching, volunteering): title, organisation, bullets | period ---------- */
+.period-group { display: grid; grid-template-columns: minmax(0, 1fr) 7rem; gap: 1.5rem; padding: 1.6rem 0;
   border-top: 1px solid var(--line-soft); }
-.award-year:first-child { border-top: 0; padding-top: .4rem; }
-.award-year-label { margin: 0; font-size: 1.3rem; line-height: 1.5rem; color: var(--text); white-space: nowrap; }
-.award-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.3rem; }
-.award p { margin: 0; }
-.award-name { font-weight: 500; line-height: 1.5rem; }
-.award-by { color: var(--muted); font-size: .93rem; }
-.award-note { margin-top: .25rem !important; position: relative; padding-left: 1.2rem; color: var(--faint); font-size: .85rem; }
-.award-note::before { content: '•'; position: absolute; left: .35rem; color: var(--muted); }
+.period-group:first-child { border-top: 0; padding-top: .4rem; }
+.period-label { order: 2; margin: 0; font-size: 1.3rem; line-height: 1.5rem; color: var(--text); white-space: nowrap; text-align: right; }
+.period-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.3rem; }
+.entry p { margin: 0; }
+.entry-title { font-weight: 500; line-height: 1.5rem; }
+.entry-by { color: var(--muted); font-size: .93rem; }
+.entry-bullet { margin-top: .25rem !important; position: relative; padding-left: 1.2rem; color: var(--faint); font-size: .85rem; }
+.entry-bullet::before { content: '•'; position: absolute; left: .35rem; color: var(--muted); }
 @media (max-width: 560px) {
-  .award-year { grid-template-columns: 1fr; gap: .8rem; }
+  .period-group { grid-template-columns: 1fr; gap: .8rem; }
+  .period-label { order: 0; text-align: left; }
 }
+

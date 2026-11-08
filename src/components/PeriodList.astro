@@ -1,0 +1,27 @@
+---
+// Title, organisation and indented bullet lines; the period sits on the right.
+// Consecutive entries with the same period share one label.
+import type { Entry } from '../data/profile';
+interface Props { entries: Entry[]; }
+const groups: { period: string; items: Entry[] }[] = [];
+for (const e of Astro.props.entries) {
+  const last = groups.at(-1);
+  if (last?.period === e.period) last.items.push(e); else groups.push({ period: e.period, items: [e] });
+}
+---
+<div class="period-list">
+  {groups.map((g) => (
+    <div class="period-group">
+      <h2 class="period-label">{g.period}</h2>
+      <ul class="period-items">
+        {g.items.map((e) => (
+          <li class="entry">
+            <p class="entry-title">{e.title}{e.poster && <> <a class="ref-link" href={e.poster} target="_blank" rel="noopener noreferrer">Poster&nbsp;↗</a></>}</p>
+            {e.by && <p class="entry-by">{e.by}</p>}
+            {e.bullets?.map((b) => <p class="entry-bullet">{b}</p>)}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>
