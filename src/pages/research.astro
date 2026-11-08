@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Refs from '../components/Refs.astro';
 import { publications, inPreparation, oralPresentations, posterPresentations } from '../data/profile';
-const published = publications.map((p) => `${p.authors} ${p.title}. ${p.venue}.`);
+const published = publications.map((p) => ({ text: `${p.authors} ${p.title}. ${p.venue}.`, paper: p.href || undefined }));
 ---
 <Base title="Research">
   <h1 class="page-title">Research</h1>

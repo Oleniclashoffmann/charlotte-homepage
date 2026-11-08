@@ -54,7 +54,7 @@ export const educationTimeline: TimelineEntry[] = [
   },
   {
     period: '2021 – 2025',
-    html: 'B.A., Sociology and Psychology, <a href="https://www.lmu.de/en/">Ludwig-Maximilians-Universität</a> (Germany).',
+    html: 'B.A., Sociology and Psychology, <a href="https://www.lmu.de/en/">Ludwig-Maximilians-University</a> (Germany).',
     bullets: [
       'Sociology (120 ECTS) and Psychology (60 ECTS); final German grade 1.5',
       'Thesis: Between Secularization and Spirituality: The Transformation of Faith Through Digitalization',
@@ -125,7 +125,7 @@ export const publications = [
     title: 'Investigating interpretation bias and stress responses as risk factors in children of parents with depression',
     authors: 'Frommelt, T., Bäumler, L., Rohleder, N., Bartosch, A., Schneider, L., Sumpf, C., Sfärlea, A., Schulte-Körne, G., & Platt, B.',
     venue: 'BMC Psychiatry, 26(1), 576 (2026)',
-    href: '',
+    href: 'https://doi.org/10.1186/s12888-026-08408-z',
   },
   {
     title: 'Survivance as a framework for rethinking resilience with Indigenous youth',
@@ -160,7 +160,7 @@ export const oralPresentations = [
 ];
 
 // Entries with a `poster` get a "Poster" link to the PDF in public/posters.
-export type Ref = string | { text: string; poster?: string };
+export type Ref = string | { text: string; poster?: string; paper?: string };
 
 export const posterPresentations: Ref[] = [
   'Sumpf, C. L., Stillitano, V., Boatswain-Jacques, A., Lai, J., O’Connor, R. M., Mushquash, C. J., Wendt, D. C., & Burack, J. A. Cultural identity and resilience among Indigenous adolescents. Society for Research in Child Development, Atlanta, USA. [Submitted abstract.]',

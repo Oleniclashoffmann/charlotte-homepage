@@ -1,5 +1,5 @@
 ---
-// A list of APA-style citations; Charlotte's name is set in bold. Entries may link to their poster PDF.
+// A list of APA-style citations; Charlotte's name is set in bold. Entries may link to the published paper or their poster PDF.
 import type { Ref } from '../data/profile';
 interface Props { items: Ref[]; }
 const { items } = Astro.props;
@@ -11,6 +11,7 @@ const norm = (r: Ref) => (typeof r === 'string' ? { text: r } : r);
   {items.map(norm).map((r) => (
     <li>
       <span set:html={bold(r.text)} />
+      {r.paper && <> <a class="ref-link" href={r.paper} target="_blank" rel="noopener noreferrer">Paper&nbsp;↗</a></>}
       {r.poster && <> <a class="ref-link" href={r.poster} target="_blank" rel="noopener noreferrer">Poster&nbsp;↗</a></>}
     </li>
   ))}
