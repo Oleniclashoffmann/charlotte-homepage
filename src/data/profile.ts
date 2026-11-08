@@ -68,43 +68,43 @@ export const educationTimeline: TimelineEntry[] = [
 
 // Lab Work, Teaching & Supervision and Volunteering pages use the same layout as Awards:
 // period on the left, then title, organisation and indented bullet lines.
-export type Entry = { period: string; title: string; by?: string; bullets?: string[]; poster?: string };
+export type Entry = { period: string; title: string; by?: string; bullets?: string[]; poster?: string; logo?: string };
 
 export const labWork: Entry[] = [
   { period: '2025 – now', title: 'Graduate Student Researcher',
-    by: 'McGill Youth Study Team (MYST Lab), McGill University · Prof. Jacob A. Burack',
+    by: 'McGill Youth Study Team (MYST Lab), McGill University · Prof. Jacob A. Burack', logo: '/img/logos/labs/myst.png',
     bullets: [
       'Contribute to longitudinal, community-engaged research with Indigenous communities.',
       'Collaborate on studies of social attention in autistic youth and developmental experiences of youth in out-of-home care.',
     ] },
   { period: '2025 – now', title: 'Graduate Student Researcher',
-    by: 'Cognition, Attention & Achievement Research, McGill University · Prof. Tasmia Hai',
+    by: 'Cognition, Attention & Achievement Research, McGill University · Prof. Tasmia Hai', logo: '/img/logos/labs/caar.png',
     bullets: [
       'Research on social determinants of health and academic functioning in youth.',
       'Analyze structural MRI data on cortical thickness and white matter connectivity & tractography methods.',
       'ABCD Study data examining social determinants, ADHD symptoms, and neurodevelopment.',
     ] },
   { period: '2024 – 2025', title: 'Research Assistant',
-    by: 'PRODO Research Group, LMU University Hospital, Munich · Dr. Belinda Platt',
+    by: 'PRODO Research Group, LMU University Hospital, Munich · Dr. Belinda Platt', logo: '/img/logos/labs/prodo.png',
     bullets: [
       'CHIMPS-NET study: data entry and analysis.',
       'GuG-Auf study: supported program evaluation and co-facilitated family group interventions.',
       'CoCo study: conducted cortisol-based stress testing and managed data entry.',
     ] },
   { period: '2024 – 2025', title: 'Research Assistant',
-    by: 'Toppspell Research Group, LMU University Hospital, Munich · Prof. Dr. Christina Moll',
+    by: 'Toppspell Research Group, LMU University Hospital, Munich · Prof. Dr. Christina Moll', logo: '/img/logos/labs/toppspell.png',
     bullets: [
       'Administered standardized cognitive and spelling assessments to elementary school children, examining cognitive processes underlying spelling development.',
       'Conducted EEG recordings, coordinated participant assessments, and supported longitudinal data collection, entry, and quality control.',
     ] },
   { period: '2024 – 2025', title: 'Research Assistant',
-    by: 'Depression Research Group, LMU University Hospital, Munich · Dr. Dr. Aline D. Scherff',
+    by: 'Depression Research Group, LMU University Hospital, Munich · Dr. Dr. Aline D. Scherff', logo: '/img/logos/labs/depression.png',
     bullets: [
       'BioMD-Y biobank study examining genetic, hormonal, and environmental risk and protective factors associated with depression in youth.',
       'Managed biological samples and documentation; assisted with research grant preparation and submission.',
     ] },
   { period: '2022 – 2023', title: 'Research Assistant / Lab Coordinator',
-    by: 'Experimental Lab for Economics and Social Sciences (MELESSA), LMU Munich · Dr. Andrej Woerner',
+    by: 'Experimental Lab for Economics and Social Sciences (MELESSA), LMU Munich · Dr. Andrej Woerner', logo: '/img/logos/lmu.svg',
     bullets: [
       'Organized and conducted large-scale computer-based experiments, including participant recruitment, session coordination, technical setup, and data quality monitoring.',
       'Supported interdisciplinary experimental research, collaborating with multiple research groups.',
