@@ -177,14 +177,15 @@ export const posterPresentations: Ref[] = [
   { text: 'Sumpf, C. L., Ginsberg, M., Langille, L., Gazith, A., Stubbert, E., Bertone, A., & Burack, J. A. (2025, November 14). Understanding the link between biological motion processing and social responsiveness in autism: A comparison between two measures [Poster]. SCERT Conference, Montréal, Canada.', poster: '/posters/2025-scert-biological-motion-autism.pdf' },
 ];
 
-export type Award = { year: string; name: string; by: string; amount?: string; note?: string };
+export type Award = { year: string; name: string; by: string; amount?: string; note?: string; poster?: string };
 // Awards page: grouped by year (newest first); `amount` ends the note line.
 export const awards: Award[] = [
   { year: '2026', name: 'CADDRA Student Award', by: 'Canadian ADHD Resource Alliance',
     note: 'Student conference award at the 2026 CADDRA ADHD Conference.' },
   { year: '2026', name: 'Academic Excellence Award', by: 'McGill University',
     amount: 'CA$750', note: 'Merit-based recognition of graduate academic achievement.' },
-  { year: '2026', name: 'Best Poster Award', by: 'Centre for Research in Human Development Conference, Concordia University' },
+  { year: '2026', name: 'Best Poster Award', by: 'Centre for Research in Human Development Conference',
+    poster: '/posters/2026-crdh-cyberbullying-school-safety.pdf' },
   { year: '2025', name: 'Canada First Research Excellence Fund (CFREF)', by: 'McGill University',
     amount: 'CA$3,000', note: 'Research-related funding.' },
   { year: '2025', name: 'Dean’s Loop Lab Award', by: 'McGill University', amount: 'CA$6,000', note: 'Graduate award.' },

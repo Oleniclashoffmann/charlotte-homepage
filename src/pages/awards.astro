@@ -17,7 +17,7 @@ for (const a of awards) {
         <ul class="award-list">
           {g.items.map((a) => (
             <li class="award">
-              <p class="award-name">{a.name}</p>
+              <p class="award-name">{a.name}{a.poster && <> <a class="ref-link" href={a.poster} target="_blank" rel="noopener noreferrer">Poster&nbsp;↗</a></>}</p>
               <p class="award-by">{a.by}</p>
               {(a.amount || a.note) && <p class="award-note">{[a.note?.replace(/\.$/, ''), a.amount].filter(Boolean).join(' · ')}</p>}
             </li>
