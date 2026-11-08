@@ -16,7 +16,7 @@ for (const e of Astro.props.entries) {
       <ul class="period-items">
         {g.items.map((e) => (
           <li class="entry">
-            <p class="entry-title">{e.title}{e.poster && <> <a class="ref-link" href={e.poster} target="_blank" rel="noopener noreferrer">Poster&nbsp;↗</a></>}</p>
+            <p class="entry-title">{e.title}{e.poster && <> <a class="ref-link" href={e.poster} target="_blank" rel="noopener noreferrer">Poster</a></>}</p>
             {e.by && <p class="entry-by">{e.by}</p>}
             {e.bullets?.map((b) => <p class="entry-bullet">{b}</p>)}
           </li>

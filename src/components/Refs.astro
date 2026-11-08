@@ -12,8 +12,8 @@ const norm = (r: Ref) => (typeof r === 'string' ? { text: r } : r);
     <li>
       <span set:html={bold(r.text)} />
       {r.abstract && <> <a class="ref-link" href={r.abstract}>Abstract</a></>}
-      {r.paper && <> <a class="ref-link" href={r.paper} target="_blank" rel="noopener noreferrer">Paper&nbsp;↗</a></>}
-      {r.poster && <> <a class="ref-link" href={r.poster} target="_blank" rel="noopener noreferrer">Poster&nbsp;↗</a></>}
+      {r.paper && <> <a class="ref-link" href={r.paper} target="_blank" rel="noopener noreferrer">Paper</a></>}
+      {r.poster && <> <a class="ref-link" href={r.poster} target="_blank" rel="noopener noreferrer">Poster</a></>}
     </li>
   ))}
 </ul>
