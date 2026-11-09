@@ -3,11 +3,11 @@
 export const profile = {
   name: 'Charlotte Sumpf',
   tagline: 'Educational psychology · human development · youth well-being',
-  // DRAFT intro written from the CV - Charlotte should rewrite this in her own words.
   about:
-    'I am an Master student in Educational Psychology (Human Development) at McGill University in Montréal. ' +
-    'My research looks at social determinants of health and academic functioning in youth, resilience and ' +
-    'cultural connectedness among Indigenous youth, and the neurodevelopment of ADHD and autism.',
+    'I am a master’s student in Educational Psychology (Human Development) at McGill University in Montréal. ' +
+    'I study how social and cultural contexts shape young people’s development, learning, and well-being. ' +
+    'My research spans social determinants of health and academic functioning, cultural connectedness and ' +
+    'resilience among Indigenous youth, and neurodevelopment in ADHD and autism.',
   photo: '/img/charlotte.jpg', // home-page circle; set to '' to show the monogram instead
   role: 'M.A. Student, Educational Psychology (Human Development)',
   institution: 'McGill University, Montréal',
