@@ -5,7 +5,7 @@ export const profile = {
   tagline: 'Educational psychology · human development · youth well-being',
   // DRAFT intro written from the CV - Charlotte should rewrite this in her own words.
   about:
-    'I am an M.A. student in Educational Psychology (Human Development) at McGill University in Montréal. ' +
+    'I am an Master student in Educational Psychology (Human Development) at McGill University in Montréal. ' +
     'My research looks at social determinants of health and academic functioning in youth, resilience and ' +
     'cultural connectedness among Indigenous youth, and the neurodevelopment of ADHD and autism.',
   photo: '/img/charlotte.jpg', // home-page circle; set to '' to show the monogram instead
