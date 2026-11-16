@@ -180,8 +180,9 @@ section.first { margin-top: 2.2rem; }
 /* photo floated into a description (volunteering): small, on the right, text wraps around it */
 .entry-photo { float: right; width: 7.5rem; height: auto; margin: .3rem 0 .5rem 1.1rem; border-radius: 10px;
   border: 1px solid var(--line-soft); }
-/* below-first-line: the photo starts one line lower and the shape keeps that line free (first line full width) */
-.entry-photo.below-first-line { margin-top: calc(1lh + .3rem); shape-outside: inset(calc(1lh + .3rem) 0 0 0); }
+/* skipLines (--skip): the photo starts that many lines into the text; the shape keeps those lines free,
+   so they run full width and the photo sits inside the text like in a two-paragraph entry */
+.entry-photo[style*="--skip"] { margin-top: calc(var(--skip) * 1lh + .3rem); shape-outside: inset(calc(var(--skip) * 1lh + .3rem) 0 0 0); }
 @media (max-width: 640px) { .entry-photo { width: 32%; } }
 .entry-title { font-weight: 500; line-height: 1.5rem; }
 .entry-by { color: var(--muted); font-size: .93rem; }

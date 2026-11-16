@@ -1,15 +1,16 @@
 ---
 // Title, organisation and indented bullet lines; the period sits on the right.
-// Consecutive entries with the same period share one label. If any entry has a logo, every entry
+// Consecutive entries with the same period share one label (unless shareDates={false}: every entry shows its own). If any entry has a logo, every entry
 // gets a logo slot so the text lines up. A photo (image) is floated into the description: at the start of
 // the second paragraph if there is one (otherwise the first), on the right.
 import type { Entry } from '../data/profile';
-interface Props { entries: Entry[]; }
+interface Props { entries: Entry[]; shareDates?: boolean; }
 const withLogos = Astro.props.entries.some((e) => e.logo);
 const groups: { period: string; items: Entry[] }[] = [];
+const shareDates = Astro.props.shareDates ?? true;
 for (const e of Astro.props.entries) {
   const last = groups.at(-1);
-  if (last?.period === e.period) last.items.push(e); else groups.push({ period: e.period, items: [e] });
+  if (shareDates && last?.period === e.period) last.items.push(e); else groups.push({ period: e.period, items: [e] });
 }
 const photoAt = (e: Entry) => Math.min(1, (e.paragraphs?.length ?? 1) - 1);   // paragraph that holds the photo
 ---
@@ -28,7 +29,7 @@ const photoAt = (e: Entry) => Math.min(1, (e.paragraphs?.length ?? 1) - 1);   //
             {e.paragraphs?.map((paragraph, i) => (
               <p class="entry-paragraph">
                 {e.image && i === photoAt(e) && (
-                  <img class:list={['entry-photo', { 'below-first-line': e.image.belowFirstLine }]} src={e.image.src} alt={e.image.alt} loading="lazy" decoding="async" />
+                  <img class="entry-photo" style={e.image.skipLines ? `--skip: ${e.image.skipLines}` : undefined} src={e.image.src} alt={e.image.alt} loading="lazy" decoding="async" />
                 )}
                 {paragraph}
               </p>
