@@ -28,7 +28,7 @@ const photoAt = (e: Entry) => Math.min(1, (e.paragraphs?.length ?? 1) - 1);   //
             {e.paragraphs?.map((paragraph, i) => (
               <p class="entry-paragraph">
                 {e.image && i === photoAt(e) && (
-                  <img class="entry-photo" src={e.image.src} alt={e.image.alt} loading="lazy" decoding="async" />
+                  <img class:list={['entry-photo', { small: e.image.small }]} src={e.image.src} alt={e.image.alt} loading="lazy" decoding="async" />
                 )}
                 {paragraph}
               </p>

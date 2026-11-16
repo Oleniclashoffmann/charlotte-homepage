@@ -180,7 +180,9 @@ section.first { margin-top: 2.2rem; }
 /* photo floated into a description (volunteering): small, on the right, text wraps around it */
 .entry-photo { float: right; width: 10rem; height: auto; margin: .3rem 0 .5rem 1.1rem; border-radius: 10px;
   border: 1px solid var(--line-soft); }
-@media (max-width: 640px) { .entry-photo { width: 42%; } }
+/* small photo: starts one line lower; the shape keeps that line free, so the first line runs full width */
+.entry-photo.small { width: 7.5rem; margin-top: calc(1lh + .3rem); shape-outside: inset(calc(1lh + .3rem) 0 0 0); }
+@media (max-width: 640px) { .entry-photo { width: 42%; } .entry-photo.small { width: 32%; } }
 .entry-title { font-weight: 500; line-height: 1.5rem; }
 .entry-by { color: var(--muted); font-size: .93rem; }
 .entry-bullet { margin-top: .25rem !important; position: relative; padding-left: 1.2rem; color: var(--faint); font-size: .85rem; }
