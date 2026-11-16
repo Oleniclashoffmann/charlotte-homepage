@@ -28,10 +28,16 @@ const photoAt = (e: Entry) => Math.min(1, (e.paragraphs?.length ?? 1) - 1);   //
             {e.bullets?.map((b) => <p class="entry-bullet">{b}</p>)}
             {e.paragraphs?.map((paragraph, i) => (
               <p class="entry-paragraph">
-                {e.image && i === photoAt(e) && (
-                  <img class="entry-photo" style={e.image.skipLines ? `--skip: ${e.image.skipLines}` : undefined} src={e.image.src} alt={e.image.alt} loading="lazy" decoding="async" />
-                )}
-                {paragraph}
+                {e.image && i === photoAt(e) ? (() => {
+                  // afterSentences: the photo floats in after that many sentences, so text runs above it too
+                  const parts = paragraph.split(/(?<=[.!?])\s+/);
+                  const k = Math.min(e.image.afterSentences ?? 0, parts.length - 1);
+                  return <>
+                    {k > 0 && <>{parts.slice(0, k).join(' ')} </>}
+                    <img class="entry-photo" src={e.image.src} alt={e.image.alt} loading="lazy" decoding="async" />
+                    {parts.slice(k).join(' ')}
+                  </>;
+                })() : paragraph}
               </p>
             ))}
             </div>
