@@ -226,6 +226,10 @@ export const volunteering: Entry[] = [
       'I joined the EGSS council because I wanted to make graduate student life at McGill more welcoming and connected. As Co-VP of Student Life, I’d like to give students more chances to get to know people outside their program or year through coffee meetups, potlucks, and study breaks, while making it easier for them to find resources, share their work, and meet people they might want to collaborate with.',
       'Part of the role is supporting students one-on-one, which includes helping them understand their options during disputes or disciplinary procedures and representing them on non-academic matters within the Faculty of Education and across McGill. I also work with the VPs for Diversity and Equity to make our events welcoming and accessible.',
     ] },
+  { period: '2026 – now', title: 'Peer Reviewer', by: 'Mind Pad, Canadian Psychological Association',
+    paragraphs: [
+      'I review student manuscripts for Mind Pad, a national psychology publication run by the Canadian Psychological Association’s Section for Students, and contribute to editorial decisions about which submissions are suitable for publication. What I enjoy about reviewing is giving students feedback they can use in their next draft, whether that means pointing out where an idea comes through clearly or where it could use more development.',
+    ] },
   { period: '2019 – now', title: 'Co-Founder, Executive Board Member & Treasurer',
     by: 'Grafing Goes Green e.V., Grafing',
     paragraphs: [
@@ -244,10 +248,6 @@ export const volunteering: Entry[] = [
   { period: 'March 2026', title: 'Peer Reviewer', by: 'EGSS Conference, McGill University, Montréal',
     paragraphs: [
       'Reviewing abstracts for talks and posters at the EGSS Conference gave me a chance to see what students in other programs were working on, and I especially enjoyed reading about questions I don’t usually encounter in my own research.',
-    ] },
-  { period: '2026 – now', title: 'Peer Reviewer', by: 'Mind Pad, Canadian Psychological Association',
-    paragraphs: [
-      'I review student manuscripts for Mind Pad, a national psychology publication run by the Canadian Psychological Association’s Section for Students, and contribute to editorial decisions about which submissions are suitable for publication. What I enjoy about reviewing is giving students feedback they can use in their next draft, whether that means pointing out where an idea comes through clearly or where it could use more development.',
     ] },
 ];
 
