@@ -241,13 +241,13 @@ export const volunteering: Entry[] = [
     paragraphs: [
       'I volunteered at a conference on neurodevelopmental conditions organized by the Summit Centre for Education, Research, and Training (SCERT), which connects research with educational practice to support neurodivergent learners. On the day, I helped presenters and keynote speakers and kept the poster sessions running smoothly.',
     ] },
-  { period: '2026 – 2027', title: 'Peer Reviewer', by: 'Mind Pad, Canadian Psychological Association',
-    paragraphs: [
-      'I review student manuscripts for Mind Pad, a national psychology publication run by the Canadian Psychological Association’s Section for Students, and contribute to editorial decisions about which submissions are suitable for publication. What I enjoy about reviewing is giving students feedback they can use in their next draft, whether that means pointing out where an idea comes through clearly or where it could use more development.',
-    ] },
   { period: 'March 2026', title: 'Peer Reviewer', by: 'EGSS Conference, McGill University, Montréal',
     paragraphs: [
       'Reviewing abstracts for talks and posters at the EGSS Conference gave me a chance to see what students in other programs were working on, and I especially enjoyed reading about questions I don’t usually encounter in my own research.',
+    ] },
+  { period: '2026 – now', title: 'Peer Reviewer', by: 'Mind Pad, Canadian Psychological Association',
+    paragraphs: [
+      'I review student manuscripts for Mind Pad, a national psychology publication run by the Canadian Psychological Association’s Section for Students, and contribute to editorial decisions about which submissions are suitable for publication. What I enjoy about reviewing is giving students feedback they can use in their next draft, whether that means pointing out where an idea comes through clearly or where it could use more development.',
     ] },
 ];
 
