@@ -2,7 +2,7 @@
 // Title, organisation and indented bullet lines; the period sits on the right.
 // Consecutive entries with the same period share one label. If any entry has a logo, every entry
 // gets a logo slot so the text lines up. A photo (image) is floated into the description: at the start of
-// the second paragraph if there is one (otherwise the first), alternating right / left down the page.
+// the second paragraph if there is one (otherwise the first), on the right.
 import type { Entry } from '../data/profile';
 interface Props { entries: Entry[]; }
 const withLogos = Astro.props.entries.some((e) => e.logo);
@@ -11,8 +11,6 @@ for (const e of Astro.props.entries) {
   const last = groups.at(-1);
   if (last?.period === e.period) last.items.push(e); else groups.push({ period: e.period, items: [e] });
 }
-const photoSide = new Map<Entry, string>();
-Astro.props.entries.filter((e) => e.image).forEach((e, i) => photoSide.set(e, i % 2 ? 'photo-left' : 'photo-right'));
 const photoAt = (e: Entry) => Math.min(1, (e.paragraphs?.length ?? 1) - 1);   // paragraph that holds the photo
 ---
 <div class="period-list">
@@ -30,7 +28,7 @@ const photoAt = (e: Entry) => Math.min(1, (e.paragraphs?.length ?? 1) - 1);   //
             {e.paragraphs?.map((paragraph, i) => (
               <p class="entry-paragraph">
                 {e.image && i === photoAt(e) && (
-                  <img class:list={['entry-photo', photoSide.get(e)]} src={e.image.src} alt={e.image.alt} loading="lazy" decoding="async" />
+                  <img class="entry-photo" src={e.image.src} alt={e.image.alt} loading="lazy" decoding="async" />
                 )}
                 {paragraph}
               </p>
