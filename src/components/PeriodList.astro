@@ -1,7 +1,7 @@
 ---
 // Title, organisation and indented bullet lines; the period sits on the right.
 // Consecutive entries with the same period share one label. If any entry has a logo, every entry
-// gets a logo slot so the text lines up.
+// gets a logo slot so the text lines up. A photo (image) sits inside the description, beside the text.
 import type { Entry } from '../data/profile';
 interface Props { entries: Entry[]; }
 const withLogos = Astro.props.entries.some((e) => e.logo);
@@ -19,10 +19,10 @@ for (const e of Astro.props.entries) {
         {g.items.map((e) => (
           <li class="entry" class:list={{ 'has-logo': withLogos }}>
             {withLogos && <span class="entry-logo">{e.logo && <img src={e.logo} alt="" />}</span>}
-            {e.image && <img class="entry-image" src={e.image.src} alt={e.image.alt} decoding="async" />}
             <div class="entry-text">
             <p class="entry-title">{e.title}{e.poster && <> <a class="ref-link" href={e.poster} target="_blank" rel="noopener noreferrer">Poster</a></>}</p>
             {e.by && <p class="entry-by">{e.by}</p>}
+            {e.image && <img class="entry-photo" src={e.image.src} alt={e.image.alt} loading="lazy" decoding="async" />}
             {e.bullets?.map((b) => <p class="entry-bullet">{b}</p>)}
             {e.paragraphs?.map((paragraph) => <p class="entry-paragraph">{paragraph}</p>)}
             </div>

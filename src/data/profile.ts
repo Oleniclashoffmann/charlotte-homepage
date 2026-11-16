@@ -222,18 +222,19 @@ export const reviewingTimeline: TimelineEntry[] = [
 export const volunteering: Entry[] = [
   { period: '2026 – now', title: 'Co-Vice-President, Student Life',
     by: 'Education Graduate Students’ Society (EGSS), McGill University',
-    image: { src: '/img/volunteering/egss.png', alt: 'Education Graduate Students’ Society logo' },
+    logo: '/img/logos/volunteering/egss.png',
     paragraphs: [
       'I joined the EGSS council because I wanted to make graduate student life at McGill more welcoming and connected. As Co-VP of Student Life, I’d like to give students more chances to get to know people outside their program or year through coffee meetups, potlucks, and study breaks, while making it easier for them to find resources, share their work, and meet people they might want to collaborate with.',
       'Part of the role is supporting students one-on-one, which includes helping them understand their options during disputes or disciplinary procedures and representing them on non-academic matters within the Faculty of Education and across McGill. I also work with the VPs for Diversity and Equity to make our events welcoming and accessible.',
     ] },
   { period: '2026 – now', title: 'Peer Reviewer', by: 'Mind Pad, Canadian Psychological Association',
-    image: { src: '/img/volunteering/cpa.png', alt: 'Canadian Psychological Association logo' },
+    logo: '/img/logos/volunteering/cpa.png',
     paragraphs: [
       'I review student manuscripts for Mind Pad, a national psychology publication run by the Canadian Psychological Association’s Section for Students, and contribute to editorial decisions about which submissions are suitable for publication. What I enjoy about reviewing is giving students feedback they can use in their next draft, whether that means pointing out where an idea comes through clearly or where it could use more development.',
     ] },
   { period: '2019 – now', title: 'Co-Founder, Executive Board Member & Treasurer',
     by: 'Grafing Goes Green e.V., Grafing',
+    logo: '/img/logos/volunteering/grafing-goes-green.png',
     image: { src: '/img/volunteering/grafing-goes-green.jpg', alt: 'Grafing Goes Green team at the Bürgerenergiepreis award ceremony' },
     paragraphs: [
       'When my whole high school class skipped school to join a Fridays for Future demonstration, we came back wanting to do something in our hometown. After a couple of exhausting weeks of sorting through ideas, we started Grafing Goes Green, which has since become a registered nonprofit.',
@@ -241,17 +242,19 @@ export const volunteering: Entry[] = [
     ] },
   { period: '2026', title: 'Community-Engaged Research Workshops — First Nations Voices in Research',
     by: 'Healthy Brains Healthy Lives, Montréal',
+    logo: '/img/logos/volunteering/hbhl.png',
     image: { src: '/img/volunteering/first-nations-workshop.jpg', alt: 'Naskapi sign at Kawawachikamach' },
     paragraphs: [
       'As I became more involved in research with Indigenous communities, I had the opportunity to co-organize knowledge translation workshops with people from several First Nations communities. We discussed risk and resilience, autism, and what respectful research grounded in Indigenous knowledge and community priorities could look like. I especially valued the personal stories people shared with us, because hearing what mattered to them and what they wanted researchers to pay attention to reminded me why I went into research in the first place.',
     ] },
   { period: '2025', title: 'Conference Volunteer', by: 'SCERT Conference, Montréal',
+    logo: '/img/logos/volunteering/scert.png',
     image: { src: '/img/volunteering/scert.jpg', alt: 'Flowers in a tote bag from the 2025 SCERT Conference' },
     paragraphs: [
       'I volunteered at a conference on neurodevelopmental conditions organized by the Summit Centre for Education, Research, and Training (SCERT), which connects research with educational practice to support neurodivergent learners. On the day, I helped presenters and keynote speakers and kept the poster sessions running smoothly.',
     ] },
   { period: 'March 2026', title: 'Peer Reviewer', by: 'EGSS Conference, McGill University, Montréal',
-    image: { src: '/img/volunteering/egss.png', alt: 'Education Graduate Students’ Society logo' },
+    logo: '/img/logos/volunteering/egss.png',
     paragraphs: [
       'Reviewing abstracts for talks and posters at the EGSS Conference gave me a chance to see what students in other programs were working on, and I especially enjoyed reading about questions I don’t usually encounter in my own research.',
     ] },
