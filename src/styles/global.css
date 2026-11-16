@@ -186,7 +186,7 @@ section.first { margin-top: 2.2rem; }
 .entry-by { color: var(--muted); font-size: .93rem; }
 .entry-bullet { margin-top: .25rem !important; position: relative; padding-left: 1.2rem; color: var(--faint); font-size: .85rem; }
 .entry-bullet::before { content: '•'; position: absolute; left: .35rem; color: var(--muted); }
-.entry-paragraph { margin-top: .5rem !important; font-size: .9rem; }
+.entry-paragraph { margin-top: .5rem !important; font-size: .9rem; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 @media (max-width: 560px) {
   .period-group { grid-template-columns: 1fr; gap: .8rem; }
   .period-label { order: 0; text-align: left; }
