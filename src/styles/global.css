@@ -177,10 +177,11 @@ section.first { margin-top: 2.2rem; }
 .entry-logo:empty { background: transparent; border-color: transparent; }
 .entry-logo img { display: block; max-width: 100%; max-height: 40px; object-fit: contain; }
 .entry-text { min-width: 0; flex: 1; display: flow-root; }
-/* photo inside a description (volunteering): beside the text on wide screens, full width on phones */
-.entry-photo { float: right; width: 13rem; height: auto; margin: .6rem 0 .6rem 1.2rem; border-radius: 10px;
-  border: 1px solid var(--line-soft); }
-@media (max-width: 640px) { .entry-photo { float: none; display: block; width: 100%; max-width: 22rem; margin: .7rem 0 .2rem; } }
+/* photo floated into a description (volunteering): small, text wraps around it, sides alternate */
+.entry-photo { width: 10rem; height: auto; border-radius: 10px; border: 1px solid var(--line-soft); }
+.entry-photo.photo-right { float: right; margin: .3rem 0 .5rem 1.1rem; }
+.entry-photo.photo-left { float: left; margin: .3rem 1.1rem .5rem 0; }
+@media (max-width: 640px) { .entry-photo { width: 42%; } }
 .entry-title { font-weight: 500; line-height: 1.5rem; }
 .entry-by { color: var(--muted); font-size: .93rem; }
 .entry-bullet { margin-top: .25rem !important; position: relative; padding-left: 1.2rem; color: var(--faint); font-size: .85rem; }
