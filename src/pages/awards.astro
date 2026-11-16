@@ -2,11 +2,13 @@
 import Base from '../layouts/Base.astro';
 import PeriodList from '../components/PeriodList.astro';
 import { awards } from '../data/profile';
-// One bullet per award: the note, with the amount at the end.
-const entries = awards.map((a) => {
-  const line = [a.note?.replace(/\.$/, ''), a.amount].filter(Boolean).join(' · ');
-  return { period: a.year, title: a.name, by: a.by, bullets: line ? [line] : [], poster: a.poster };
-});
+const entries = awards.map((a) => ({
+  period: a.year,
+  title: a.name,
+  by: a.by,
+  bullets: a.note ? [a.note.replace(/\.$/, '')] : [],
+  poster: a.poster,
+}));
 ---
 <Base title="Awards">
   <h1 class="page-title">Awards</h1>
