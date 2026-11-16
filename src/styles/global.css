@@ -171,6 +171,9 @@ section.first { margin-top: 2.2rem; }
 .volunteering .period-items > .entry + .entry { border-top: 1px solid var(--line-soft); padding-top: 1.3rem; }
 .entry p { margin: 0; }
 .entry.has-logo { display: flex; align-items: flex-start; gap: 1rem; }
+.volunteering .entry { display: grid; grid-template-columns: clamp(4.5rem, 16vw, 9rem) minmax(0, 1fr); gap: 1rem; align-items: start; }
+.volunteering .entry-text { grid-column: 2; }
+.entry-image { display: block; width: 100%; height: auto; border-radius: 6px; }
 .entry-logo { flex: none; box-sizing: border-box; width: 80px; height: 52px; padding: 5px 7px; display: grid; place-items: center;
   background: #fff; border: 1px solid var(--line-soft); border-radius: 10px; }
 .entry-logo:empty { background: transparent; border-color: transparent; }

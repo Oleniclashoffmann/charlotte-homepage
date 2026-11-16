@@ -68,7 +68,7 @@ export const educationTimeline: TimelineEntry[] = [
 
 // Lab Work, Teaching & Supervision and Volunteering pages use the same layout as Awards:
 // period on the left, then title, organisation and indented bullet lines.
-export type Entry = { period: string; title: string; by?: string; bullets?: string[]; paragraphs?: string[]; poster?: string; logo?: string };
+export type Entry = { period: string; title: string; by?: string; bullets?: string[]; paragraphs?: string[]; poster?: string; logo?: string; image?: { src: string; alt: string } };
 
 export const labWork: Entry[] = [
   { period: '2025 – now', title: 'Graduate Student Researcher',
@@ -222,6 +222,7 @@ export const reviewingTimeline: TimelineEntry[] = [
 export const volunteering: Entry[] = [
   { period: '2026 – now', title: 'Co-Vice-President, Student Life',
     by: 'Education Graduate Students’ Society (EGSS), McGill University',
+    image: { src: '/img/volunteering/egss.png', alt: 'Education Graduate Students’ Society logo' },
     paragraphs: [
       'I joined the EGSS council because I wanted to make graduate student life at McGill more welcoming and connected. As Co-VP of Student Life, I’d like to give students more chances to get to know people outside their program or year through coffee meetups, potlucks, and study breaks, while making it easier for them to find resources, share their work, and meet people they might want to collaborate with.',
       'Part of the role is supporting students one-on-one, which includes helping them understand their options during disputes or disciplinary procedures and representing them on non-academic matters within the Faculty of Education and across McGill. I also work with the VPs for Diversity and Equity to make our events welcoming and accessible.',
@@ -232,6 +233,7 @@ export const volunteering: Entry[] = [
     ] },
   { period: '2019 – now', title: 'Co-Founder, Executive Board Member & Treasurer',
     by: 'Grafing Goes Green e.V., Grafing',
+    image: { src: '/img/volunteering/grafing-goes-green.jpg', alt: 'Grafing Goes Green team at the Bürgerenergiepreis award ceremony' },
     paragraphs: [
       'When my whole high school class skipped school to join a Fridays for Future demonstration, we came back wanting to do something in our hometown. After a couple of exhausting weeks of sorting through ideas, we started Grafing Goes Green, which has since become a registered nonprofit.',
       'Our main focus has been making it easier for people to avoid single-use packaging when they eat out or shop locally. Alongside organizing community events and designing school workshops, I worked with several towns in the region to introduce a project that rewarded people for cutting down on plastic waste. As treasurer and a board member, I handle financial planning, legal matters, and formal correspondence with municipalities. Our work received the 2023 Bürgerenergiepreis Oberbayern and recognition through Projekt Nachhaltigkeit 2023, and we placed third in the 2020 Ebersberg district innovation competition.',
@@ -242,6 +244,7 @@ export const volunteering: Entry[] = [
       'As I became more involved in research with Indigenous communities, I had the opportunity to co-organize knowledge translation workshops with people from several First Nations communities. We discussed risk and resilience, autism, and what respectful research grounded in Indigenous knowledge and community priorities could look like. I especially valued the personal stories people shared with us, because hearing what mattered to them and what they wanted researchers to pay attention to reminded me why I went into research in the first place.',
     ] },
   { period: '2025', title: 'Conference Volunteer', by: 'SCERT Conference, Montréal',
+    image: { src: '/img/volunteering/scert.jpg', alt: 'Flowers in a tote bag from the 2025 SCERT Conference' },
     paragraphs: [
       'I volunteered at a conference on neurodevelopmental conditions organized by the Summit Centre for Education, Research, and Training (SCERT), which connects research with educational practice to support neurodivergent learners. On the day, I helped presenters and keynote speakers and kept the poster sessions running smoothly.',
     ] },

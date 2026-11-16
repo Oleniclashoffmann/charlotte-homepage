@@ -19,6 +19,7 @@ for (const e of Astro.props.entries) {
         {g.items.map((e) => (
           <li class="entry" class:list={{ 'has-logo': withLogos }}>
             {withLogos && <span class="entry-logo">{e.logo && <img src={e.logo} alt="" />}</span>}
+            {e.image && <img class="entry-image" src={e.image.src} alt={e.image.alt} decoding="async" />}
             <div class="entry-text">
             <p class="entry-title">{e.title}{e.poster && <> <a class="ref-link" href={e.poster} target="_blank" rel="noopener noreferrer">Poster</a></>}</p>
             {e.by && <p class="entry-by">{e.by}</p>}
