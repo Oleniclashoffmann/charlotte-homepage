@@ -68,7 +68,7 @@ export const educationTimeline: TimelineEntry[] = [
 
 // Lab Work, Teaching & Supervision and Volunteering pages use the same layout as Awards:
 // period on the left, then title, organisation and indented bullet lines.
-export type Entry = { period: string; title: string; by?: string; bullets?: string[]; paragraphs?: string[]; poster?: string; logo?: string; image?: { src: string; alt: string; afterSentences?: number } };
+export type Entry = { period: string; title: string; by?: string; bullets?: string[]; paragraphs?: string[]; poster?: string; logo?: string; keepWhole?: string[]; image?: { src: string; alt: string; afterWords?: number; shape?: 'wide' | 'square' } };
 
 export const labWork: Entry[] = [
   { period: '2025 – now', title: 'Graduate Student Researcher',
@@ -242,14 +242,14 @@ export const volunteering: Entry[] = [
     ] },
   { period: '2026', title: 'Community-Engaged Research Workshops — First Nations Voices in Research',
     by: 'Healthy Brains, Healthy Lives (HBHL), McGill University',
-    logo: '/img/logos/volunteering/hbhl.png',
-    image: { src: '/img/volunteering/first-nations-workshop.jpg', alt: 'Naskapi sign at Kawawachikamach', afterSentences: 1 },
+    logo: '/img/logos/volunteering/hbhl.png', keepWhole: ['research'],
+    image: { src: '/img/volunteering/first-nations-workshop.jpg', alt: 'Naskapi sign at Kawawachikamach', afterWords: 18, shape: 'wide' },
     paragraphs: [
       'As I became more involved in research with Indigenous communities, I had the opportunity to co-organize knowledge translation workshops with people from several First Nations communities. We discussed risk and resilience, autism, and what respectful research grounded in Indigenous knowledge and community priorities could look like. I especially valued the personal stories people shared with us, because hearing what mattered to them and what they wanted researchers to pay attention to reminded me why I went into research in the first place.',
     ] },
   { period: '2025', title: 'Conference Volunteer', by: 'Summit Centre for Education, Research, and Training (SCERT)',
     logo: '/img/logos/volunteering/scert.png',
-    image: { src: '/img/volunteering/scert.jpg', alt: 'Flowers in a tote bag from the 2025 SCERT Conference', afterSentences: 1 },
+    image: { src: '/img/volunteering/scert.jpg', alt: 'Flowers in a tote bag from the 2025 SCERT Conference', afterWords: 9, shape: 'square' },
     paragraphs: [
       'I volunteered at a conference on neurodevelopmental conditions organized by the Summit Centre for Education, Research, and Training (SCERT), which connects research with educational practice to support neurodivergent learners. On the day, I helped presenters and keynote speakers and kept the poster sessions running smoothly.',
     ] },

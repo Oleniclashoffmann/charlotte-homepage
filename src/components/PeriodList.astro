@@ -13,6 +13,13 @@ for (const e of Astro.props.entries) {
   if (shareDates && last?.period === e.period) last.items.push(e); else groups.push({ period: e.period, items: [e] });
 }
 const photoAt = (e: Entry) => Math.min(1, (e.paragraphs?.length ?? 1) - 1);   // paragraph that holds the photo
+// keepWhole: words of this entry that must not be hyphenated. Splits text so odd pieces are those words
+// (the template wraps them in a span with hyphens: manual).
+const whole = (e: Entry, text: string) => {
+  if (!e.keepWhole?.length) return [text];
+  const re = new RegExp(`\\b(${e.keepWhole.join('|')})\\b`);
+  return text.split(re);
+};
 ---
 <div class="period-list">
   {groups.map((g) => (
@@ -29,15 +36,15 @@ const photoAt = (e: Entry) => Math.min(1, (e.paragraphs?.length ?? 1) - 1);   //
             {e.paragraphs?.map((paragraph, i) => (
               <p class="entry-paragraph">
                 {e.image && i === photoAt(e) ? (() => {
-                  // afterSentences: the photo floats in after that many sentences, so text runs above it too
-                  const parts = paragraph.split(/(?<=[.!?])\s+/);
-                  const k = Math.min(e.image.afterSentences ?? 0, parts.length - 1);
+                  // afterWords: the photo floats in after that many words, so the first line or two run the full width above it
+                  const parts = paragraph.split(/\s+/);
+                  const k = Math.min(e.image.afterWords ?? 0, parts.length - 1);
                   return <>
-                    {k > 0 && <>{parts.slice(0, k).join(' ')} </>}
-                    <img class="entry-photo" src={e.image.src} alt={e.image.alt} loading="lazy" decoding="async" />
-                    {parts.slice(k).join(' ')}
+                    {k > 0 && <>{whole(e, parts.slice(0, k).join(' ')).map((s, j) => (j % 2 ? <span class="whole">{s}</span> : s))} </>}
+                    <img class="entry-photo" class:list={e.image.shape} src={e.image.src} alt={e.image.alt} loading="lazy" decoding="async" />
+                    {whole(e, parts.slice(k).join(' ')).map((s, j) => (j % 2 ? <span class="whole">{s}</span> : s))}
                   </>;
-                })() : paragraph}
+                })() : whole(e, paragraph).map((s, j) => (j % 2 ? <span class="whole">{s}</span> : s))}
               </p>
             ))}
             </div>
