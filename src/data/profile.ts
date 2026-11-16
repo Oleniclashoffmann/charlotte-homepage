@@ -68,7 +68,7 @@ export const educationTimeline: TimelineEntry[] = [
 
 // Lab Work, Teaching & Supervision and Volunteering pages use the same layout as Awards:
 // period on the left, then title, organisation and indented bullet lines.
-export type Entry = { period: string; title: string; by?: string; bullets?: string[]; paragraphs?: string[]; poster?: string; logo?: string; image?: { src: string; alt: string; small?: boolean } };
+export type Entry = { period: string; title: string; by?: string; bullets?: string[]; paragraphs?: string[]; poster?: string; logo?: string; image?: { src: string; alt: string; belowFirstLine?: boolean } };
 
 export const labWork: Entry[] = [
   { period: '2025 – now', title: 'Graduate Student Researcher',
@@ -249,7 +249,7 @@ export const volunteering: Entry[] = [
     ] },
   { period: '2025', title: 'Conference Volunteer', by: 'SCERT Conference, Montréal',
     logo: '/img/logos/volunteering/scert.png',
-    image: { src: '/img/volunteering/scert.jpg', alt: 'Flowers in a tote bag from the 2025 SCERT Conference', small: true },
+    image: { src: '/img/volunteering/scert.jpg', alt: 'Flowers in a tote bag from the 2025 SCERT Conference', belowFirstLine: true },
     paragraphs: [
       'I volunteered at a conference on neurodevelopmental conditions organized by the Summit Centre for Education, Research, and Training (SCERT), which connects research with educational practice to support neurodivergent learners. On the day, I helped presenters and keynote speakers and kept the poster sessions running smoothly.',
     ] },
